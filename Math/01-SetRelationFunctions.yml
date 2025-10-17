@@ -1,0 +1,1457 @@
+katas:
+  - id: K-001
+    name: Roster to Set-Builder
+    subtopic: Basic Sets
+    concept_focus: Translating a list of elements into a defining property.
+    pattern: "Textbook pattern: (R.D. Sharma)"
+    example_drill: "Write A = {2, 5, 10, 17, 26} in set-builder form."
+    step_outline:
+      - "Identify the pattern (e.g., 1^2+1, 2^2+1, 3^2+1, ...)."
+      - "Define a variable, n."
+      - "State the rule: A = {n^2+1}."
+      - "State the domain of n: n ∈ N, 1 ≤ n ≤ 5."
+    key_formulae: "A = {x : P(x)}"
+    common_traps: "Forgetting to define the domain of the variable (e.g., n ∈ N vs n ∈ W)."
+    quick_check: "Test the first and last element with the rule."
+    difficulty: Easy
+    time_target: 30 sec
+    prerequisites: "Number patterns."
+    variations: "Include alternating signs or multiple rules."
+  - id: K-002
+    name: Set-Builder to Roster
+    subtopic: Basic Sets
+    concept_focus: Generating elements from a defining property.
+    [cite_start]pattern: "Source [cite: 36]"
+    example_drill: "Write B = {x : x ∈ Z, x^2 < 12} in roster form."
+    step_outline:
+      - [cite_start]"Identify the domain: x is an integer[cite: 18]."
+      - "Solve the inequality: x^2 < 12 ⟹ -√12 < x < √12."
+      - "Approximate: -3.46 < x < 3.46."
+      - "List integers: {-3, -2, -1, 0, 1, 2, 3}."
+    [cite_start]key_formulae: "Z (Integers), N (Natural numbers)[cite: 17, 18]."
+    common_traps: "Including non-integer solutions; misinterpreting Z vs N vs R."
+    quick_check: "Check if the next integer (e.g., 4) violates the rule (4^2 < 12 is false)."
+    difficulty: Easy
+    time_target: 45 sec
+    prerequisites: "Solving basic inequalities."
+    variations: "C = {x : x = n/(n+1), n ∈ N, n ≤ 4}."
+  - id: K-003
+    name: "Basic Operations (Union, Intersection)"
+    subtopic: Set Operations
+    concept_focus: "Applying A ∪ B and A ∩ B."
+    [cite_start]pattern: "Source [cite: 233, 266]"
+    example_drill: "Given A = {1, 2, 3, 5} and B = {2, 3, 4, 6}, find A ∪ B and A ∩ B."
+    step_outline:
+      - [cite_start]"A ∪ B: List all unique elements from *either* set[cite: 234]. {1, 2, 3, 4, 5, 6}."
+      - [cite_start]"A ∩ B: List only elements common to *both* sets[cite: 267]. {2, 3}."
+    [cite_start]key_formulae: "A ∪ B = {x : x ∈ A or x ∈ B} [cite: 236][cite_start], A ∩ B = {x : x ∈ A and x ∈ B}[cite: 269]."
+    [cite_start]common_traps: "Repeating elements in the union; confusing 'or' with 'and'[cite: 253, 291]."
+    [cite_start]quick_check: "n(A ∪ B) = n(A) + n(B) - n(A ∩ B) [cite: 622] ⟹ 6 = 4 + 4 - 2. Correct."
+    difficulty: Easy
+    time_target: 30 sec
+    prerequisites: "K-001, K-002"
+    [cite_start]variations: "Operations on sets defined in set-builder form[cite: 35]."
+  - id: K-004
+    name: Difference & Complement
+    subtopic: Set Operations
+    concept_focus: "Applying A - B and A'."
+    [cite_start]pattern: "Source [cite: 305, 369]"
+    example_drill: "U = {1, ..., 10}, A = {2, 4, 6}, B = {1, 2, 3, 4}. Find A - B, B - A, and A'."
+    step_outline:
+      - [cite_start]"A - B: Elements in A but *not* in B[cite: 306]. {6}."
+      - [cite_start]"B - A: Elements in B but *not* in A[cite: 306]. {1, 3}."
+      - [cite_start]"A': Elements in U but *not* in A[cite: 370]. {1, 3, 5, 7, 8, 9, 10}."
+    [cite_start]key_formulae: "A - B = {x : x ∈ A and x ∉ B} = A ∩ B'[cite: 307, 342]. [cite_start]A' = U - A[cite: 378]."
+    [cite_start]common_traps: "Confusing A - B with B - A. They are not equal[cite: 327]."
+    quick_check: "A - B, B - A, and A ∩ B are all mutually disjoint."
+    difficulty: Easy
+    time_target: 45 sec
+    prerequisites: "K-003"
+    variations: "Find (A - B) ∪ (B - A) (Symmetric Difference)."
+  - id: K-005
+    name: "De Morgan's Law Verification"
+    subtopic: Set Operations
+    [cite_start]concept_focus: "Applying and verifying (A ∪ B)' = A' ∩ B' and (A ∩ B)' = A' ∪ B'[cite: 351, 353]."
+    [cite_start]pattern: "Source [cite: 349]"
+    example_drill: "For U={1,2,3,4,5}, A={1,2}, B={2,3}, verify (A ∪ B)' = A' ∩ B'."
+    step_outline:
+      - "LHS: A ∪ B = {1, 2, 3}. (A ∪ B)' = {4, 5}."
+      - "RHS: A' = {3, 4, 5}. B' = {1, 4, 5}."
+      - "A' ∩ B' = {4, 5}."
+      - "LHS = RHS."
+    [cite_start]key_formulae: "(A ∪ B)' = A' ∩ B' [cite: 351][cite_start], (A ∩ B)' = A' ∪ B'[cite: 353]."
+    common_traps: "Mixing up the union and intersection signs after distributing the complement."
+    quick_check: "Draw a Venn diagram and shade both sides; the regions should match."
+    difficulty: Easy
+    time_target: 1 min
+    prerequisites: "K-003, K-004"
+    [cite_start]variations: "Prove A - (B ∪ C) = (A - B) ∩ (A - C)[cite: 354]."
+  - id: K-006
+    name: Shading Venn Regions (2 Sets)
+    subtopic: Venn Diagrams
+    concept_focus: "Visualizing set operations."
+    [cite_start]pattern: "Source [cite: 371-388]"
+    example_drill: "Shade the region corresponding to A' ∪ B."
+    step_outline:
+      - [cite_start]"Draw a rectangle (U) and two overlapping circles (A, B)[cite: 205]."
+      - [cite_start]"Identify A' (everything outside A)[cite: 391]."
+      - "Identify B (the entire B circle)."
+      - [cite_start]"Union means shade *everything* from step 2 *and* step 3[cite: 234]. [cite_start](This leaves only A - B unshaded [cite: 385])."
+    key_formulae: "Visualize A', B, A ∩ B, A-B."
+    [cite_start]common_traps: "Shading A' ∩ B (only the 'B-only' crescent [cite: 386]) instead of A' ∪ B."
+    quick_check: "A' ∪ B is the same as (A - B)'."
+    difficulty: Easy
+    time_target: 30 sec
+    prerequisites: "K-004"
+    variations: "Shade (A Δ B) = (A - B) ∪ (B - A)."
+  - id: K-007
+    name: Shading Venn Regions (3 Sets)
+    subtopic: Venn Diagrams
+    concept_focus: "Visualizing complex 3-set operations."
+    [cite_start]pattern: "JEE Main pattern [cite: 679-700]"
+    example_drill: "Shade the region for 'exactly two sets,' i.e., (A ∩ B) ∪ (B ∩ C) ∪ (C ∩ A) - (A ∩ B ∩ C)."
+    step_outline:
+      - [cite_start]"Draw U and three overlapping circles (A, B, C)[cite: 679]."
+      - "Identify A ∩ B (the football shape)."
+      - "Identify B ∩ C."
+      - "Identify C ∩ A."
+      - [cite_start]"Identify A ∩ B ∩ C (the central triangle)[cite: 696]."
+      - "Shade the union of the three footballs, but *erase* the central triangle."
+    [cite_start]key_formulae: "n(A ∩ B ∩ C'), n(A ∩ B' ∩ C'), etc. [cite: 704, 741, 742]"
+    common_traps: "Forgetting to subtract the central region (A ∩ B ∩ C)."
+    [cite_start]quick_check: "The shaded region should consist of three distinct, non-touching 'petals'[cite: 684, 686, 687]."
+    difficulty: Medium
+    time_target: 1 min
+    prerequisites: "K-006"
+    variations: "Shade A ∩ (B ∪ C)'."
+  - id: K-008
+    name: Power Set Listing
+    subtopic: Basic Sets
+    [cite_start]concept_focus: "Understanding the power set P(A) as the set of all subsets[cite: 183]."
+    [cite_start]pattern: "Source [cite: 188, 189]"
+    example_drill: "A = {a, b}. Find P(A)."
+    step_outline:
+      - [cite_start]"Start with the empty set: ∅[cite: 186]."
+      - "List all singleton subsets: {a}, {b}."
+      - [cite_start]"List all 2-element subsets: {a, b}[cite: 186]."
+      - "Combine them: P(A) = {∅, {a}, {b}, {a, b}}."
+    [cite_start]key_formulae: "If n(A) = m, then n(P(A)) = 2^m[cite: 191]."
+    [cite_start]common_traps: "Forgetting the empty set ∅ or the set A itself[cite: 186]. Writing a instead of {a}."
+    [cite_start]quick_check: "n(A) = 2. n(P(A)) should be 2^2 = 4[cite: 191]. My list has 4 elements."
+    difficulty: Easy
+    time_target: 45 sec
+    prerequisites: "Set definition."
+    variations: "Find P(P({1}))."
+  - id: K-009
+    name: "n(A ∪ B) Formula"
+    subtopic: Cardinality
+    concept_focus: "Principle of Inclusion-Exclusion (PIE) for 2 sets."
+    [cite_start]pattern: "Source [cite: 622, 653]"
+    example_drill: "500 people. 350 speak Hindi (H), 300 speak English (E). Each speaks at least one. [cite_start]How many speak both? [cite: 654, 655]"
+    step_outline:
+      - [cite_start]"Identify given: n(H ∪ E) = 500, n(H) = 350, n(E) = 300[cite: 661]."
+      - [cite_start]"Recall formula: n(H ∪ E) = n(H) + n(E) - n(H ∩ E)[cite: 622]."
+      - [cite_start]"Substitute: 500 = 350 + 300 - n(H ∩ E)[cite: 663]."
+      - [cite_start]"Solve: 500 = 650 - n(H ∩ E) ⟹ n(H ∩ E) = 150[cite: 664]."
+    [cite_start]key_formulae: "n(A ∪ B) = n(A) + n(B) - n(A ∩ B)[cite: 622]."
+    [cite_start]common_traps: "Adding n(A) and n(B) without subtracting the intersection[cite: 620]."
+    [cite_start]quick_check: "Venn Diagram: H-only = 350-150=200[cite: 665]. [cite_start]E-only = 300-150=150[cite: 666]. Both = 150. Total = 200+150+150 = 500. (User input had 500, not 45). [Self-correction: Original thought was based on a different example. This one is correct based on the source.]"
+    difficulty: Easy
+    time_target: 45 sec
+    prerequisites: "K-003"
+    [cite_start]variations: "Find n(A' ∩ B') (neither A nor B) = n(U) - n(A ∪ B)[cite: 652]."
+  - id: K-010
+    name: "n(A ∪ B ∪ C) Formula"
+    subtopic: Cardinality
+    [cite_start]concept_focus: "PIE for 3 sets[cite: 636]."
+    [cite_start]pattern: "Source [cite: 634-635, 668]"
+    example_drill: "Given n(F)=17, n(E)=13, n(S)=15, n(F∩E)=9, n(E∩S)=4, n(F∩S)=5, n(F∩E∩S)=3. [cite_start]Find n(F ∪ E ∪ S). [cite: 691-694]"
+    step_outline:
+      - [cite_start]"Recall formula: n(A∪B∪C) = Σn(A) - Σn(A∩B) + n(A∩B∩C) [cite: 634-635]."
+      - "Substitute: (17+13+15) - (9+4+5) + (3)."
+      - [cite_start]"Calculate: 45 - 18 + 3 = 30[cite: 746]."
+    [cite_start]key_formulae: "n(A∪B∪C) = n(A)+n(B)+n(C) - n(A∩B) - n(B∩C) - n(C∩A) + n(A∩B∩C) [cite: 634-635]."
+    [cite_start]common_traps: "Sign errors on the last two terms[cite: 637]."
+    quick_check: "Use a Venn Diagram. [cite_start]Start from the center (a=3) [cite: 696][cite_start], then fill the 'petals' (b=6, c=1, d=2) [cite: 696-698][cite_start], then the 'only' regions (e=6, g=3, f=9) [cite: 699-700]. [cite_start]Add all 7 regions: 3+6+1+2+6+3+9 = 30[cite: 746]."
+    difficulty: Medium
+    time_target: 1.5 min
+    prerequisites: "K-009"
+    [cite_start]variations: "Find n(exactly two sets)[cite: 749]."
+  - id: K-011
+    name: '"Exactly One" Venn Problem'
+    subtopic: Cardinality
+    concept_focus: "Deriving cardinalities of disjoint regions in a Venn diagram."
+    [cite_start]pattern: "Source [cite: 748]"
+    example_drill: "Using data from K-010, find the number of elements in *exactly one* of the sets."
+    step_outline:
+      - "Formula: n(Exactly 1) = n(A) + n(B) + n(C) - 2n(A∩B) - 2n(B∩C) - 2n(C∩A) + 3n(A∩B∩C)."
+      - "Substitute: (17+13+15) - 2(9+4+5) + 3(3)."
+      - "Calculate: 45 - 2(18) + 9 = 45 - 36 + 9 = 18."
+      - "*Alt. Method (from source):* Find Venn regions first."
+      - [cite_start]"n(F only) = e = 6[cite: 701]."
+      - [cite_start]"n(E only) = g = 3[cite: 702]."
+      - [cite_start]"n(S only) = f = 9[cite: 703]."
+      - [cite_start]"Total = e + f + g = 6 + 9 + 3 = 18[cite: 748]."
+    key_formulae: "n(A only) = n(A) - n(A∩B) - n(A∩C) + n(A∩B∩C)."
+    common_traps: "Using the formula n(A) - n(A∩B) - n(A∩C) (this double-subtracts the center)."
+    [cite_start]quick_check: "Sum of 'exactly 1' (18), 'exactly 2' (9) [cite: 749][cite_start], and 'exactly 3' (3) [cite: 696] [cite_start]should equal n(A∪B∪C) (30)[cite: 746]. 18+9+3 = 30. Correct."
+    difficulty: Medium
+    time_target: 2 min
+    prerequisites: "K-010"
+    [cite_start]variations: "Find n(at least two sets)[cite: 749]."
+  - id: K-012
+    name: Cardinality with Number Theory
+    subtopic: Cardinality
+    concept_focus: "Applying PIE to divisibility problems."
+    [cite_start]pattern: "JEE Advanced pattern (PYQ) [cite: 1880-1892]"
+    example_drill: "Find the number of integers from 1 to 100 (inclusive) divisible by 2 or 3."
+    step_outline:
+      - [cite_start]"Define sets: A = divisible by 2, B = divisible by 3[cite: 1883]."
+      - [cite_start]"Find n(A) = ⌊100/2⌋ = 50[cite: 1885]."
+      - [cite_start]"Find n(B) = ⌊100/3⌋ = 33[cite: 1887]."
+      - [cite_start]"A ∩ B = divisible by LCM(2,3)=6[cite: 1888]."
+      - [cite_start]"Find n(A ∩ B) = ⌊100/6⌋ = 16[cite: 1888]."
+      - [cite_start]"Apply PIE: n(A ∪ B) = n(A) + n(B) - n(A ∩ B) = 50 + 33 - 16 = 67[cite: 1890]."
+    key_formulae: "n(Ak) = ⌊N/k⌋, n(Ak ∩ Am) = ⌊N / LCM(k, m)⌋."
+    common_traps: "Using k × m instead of LCM(k, m) (e.g., for 4 and 6, intersection is 12, not 24)."
+    quick_check: "n(A only) = 50 - 16 = 34. n(B only) = 33 - 16 = 17. Total = 34 + 17 + 16 = 67."
+    difficulty: Medium
+    time_target: 1.5 min
+    prerequisites: "K-009, LCM."
+    variations: "Find n(divisible by 2 or 3 but not 5) (requires 3-set PIE)."
+  - id: K-013
+    name: Cardinality of Power Set
+    subtopic: Basic Sets
+    [cite_start]concept_focus: "Using the 2^n formula[cite: 191]."
+    [cite_start]pattern: "Source [cite: 715]"
+    example_drill: "A set A has 5 elements. Find the number of its subsets."
+    step_outline:
+      - "Identify n(A) = 5."
+      - [cite_start]"Recall formula: n(P(A)) = 2^n(A)[cite: 191]."
+      - "Calculate: 2^5 = 32."
+    [cite_start]key_formulae: "n(P(A)) = 2^n[cite: 191]."
+    common_traps: "Calculating 5^2 instead of 2^5."
+    [cite_start]quick_check: "n=1 - 2. n=2 - 4. n=3 - 8. Pattern holds [cite: 188-190]."
+    difficulty: Easy
+    time_target: 15 sec
+    prerequisites: "K-008"
+    variations: "Find the number of *proper, non-empty* subsets (2^n - 2)."
+  - id: K-014
+    name: Cardinality of Nested Power Sets
+    subtopic: Basic Sets
+    [cite_start]concept_focus: "Iterative application of the 2^n formula[cite: 191]."
+    pattern: "Textbook pattern"
+    example_drill: "A = {1}. Find n(P(P(A)))."
+    step_outline:
+      - "n(A) = 1."
+      - [cite_start]"n(P(A)) = 2^n(A) = 2^1 = 2[cite: 188]."
+      - "Let B = P(A), so n(B) = 2."
+      - [cite_start]"n(P(B)) = n(P(P(A))) = 2^n(B) = 2^2 = 4[cite: 189]."
+    key_formulae: "n(P(A)) = 2^n, n(P(P(A))) = 2^(2^n)."
+    common_traps: "Confusing P(A) (a set) with n(P(A)) (a number)."
+    quick_check: "A = {1}. [cite_start]P(A) = {∅, {1}}[cite: 188]. P(P(A)) = {∅, {∅}, {{1}}, {∅, {1}}}. There are 4 elements."
+    difficulty: Medium
+    time_target: 1 min
+    prerequisites: "K-013"
+    variations: "n(P(P(P(∅)))) = ? (Ans: n(∅)=0 - n(P)=2^0=1 - n(PP)=2^1=2 - n(PPP)=2^2=4)."
+  - id: K-015
+    name: Check Reflexivity
+    subtopic: Relations
+    concept_focus: "Verifying if (a, a) ∈ R for all a ∈ A."
+    pattern: "Textbook pattern"
+    example_drill: "Is R = {(x, y) : x, y ∈ Z, x - y is even} reflexive?"
+    step_outline:
+      - "State the condition: For R to be reflexive, (a, a) ∈ R for all a ∈ Z."
+      - "Test the condition: a - a = 0."
+      - "Check property: 0 is an even number."
+      - "Conclusion: 0 is even, so (a, a) ∈ R. Yes, R is reflexive."
+    key_formulae: "∀ a ∈ A, (a, a) ∈ R."
+    common_traps: "Forgetting to check *all* elements of the base set A."
+    quick_check: "Test a sample element, e.g., a=3. (3,3) ∈ R because 3-3=0 (even)."
+    difficulty: Easy
+    time_target: 45 sec
+    prerequisites: "Set definition."
+    variations: "Is R = {(x, y) : x, y ∈ R, x ≤ y} reflexive? (Yes, x ≤ x)."
+  - id: K-016
+    name: Check Symmetry
+    subtopic: Relations
+    concept_focus: "Verifying if (a, b) ∈ R ⟹ (b, a) ∈ R."
+    pattern: "Textbook pattern"
+    example_drill: "Is R = {(x, y) : x, y ∈ Z, x - y is even} symmetric?"
+    step_outline:
+      - "State the condition: Assume (a, b) ∈ R. This means a - b is even."
+      - "a - b = 2k for some integer k."
+      - "Test the implication: We need to check if (b, a) ∈ R, i.e., if b - a is even."
+      - "Algebra: b - a = -(a - b) = -2k = 2(-k)."
+      - "Conclusion: b - a is also an even integer. Yes, R is symmetric."
+    key_formulae: "(a, b) ∈ R ⟹ (b, a) ∈ R."
+    common_traps: "Proving (b, a) ∈ R without *first* assuming (a, b) ∈ R."
+    quick_check: "Find a counterexample. R = {(x,y) : x ≤ y}. (1, 2) ∈ R but (2, 1) ∉ R. So not symmetric."
+    difficulty: Easy
+    time_target: 1 min
+    prerequisites: "Set definition."
+    variations: "Is R = {(x,y) : x < y} symmetric? (No)."
+  - id: K-017
+    name: Check Transitivity
+    subtopic: Relations
+    concept_focus: "Verifying if (a, b) ∈ R and (b, c) ∈ R ⟹ (a, c) ∈ R."
+    pattern: "Textbook pattern"
+    example_drill: "Is R = {(x, y) : x, y ∈ Z, x - y is even} transitive?"
+    step_outline:
+      - "State the condition: Assume (a, b) ∈ R AND (b, c) ∈ R."
+      - "This means a - b = 2k1 and b - c = 2k2."
+      - "Test the implication: We need to check if (a, c) ∈ R, i.e., if a - c is even."
+      - "Algebra: Add the two assumptions: (a - b) + (b - c) = 2k1 + 2k2."
+      - "a - c = 2(k1 + k2)."
+      - "Conclusion: a - c is an even integer. Yes, R is transitive."
+    [cite_start]key_formulae: "(a, b) ∈ R ∧ (b, c) ∈ R ⟹ (a, c) ∈ R[cite: 164]."
+    common_traps: "*Vacuous Transitivity*. R = {(1, 2), (3, 4)} *is* transitive because no 'bridge' element b exists to test the condition."
+    quick_check: "Find a counterexample. R = {(x,y) : x is friend of y}. (A is friend of B, B is friend of C, but A may not be friend of C)."
+    difficulty: Medium
+    time_target: 1.5 min
+    prerequisites: "Set definition."
+    variations: "R = {(a, b) : |a - b| ≤ 2}. (Not transitive: (1, 3) ∈ R, (3, 5) ∈ R, but (1, 5) ∉ R)."
+  - id: K-018
+    name: Identify Equivalence Relation
+    subtopic: Relations
+    concept_focus: "Combining K-015, K-016, K-017."
+    pattern: "JEE Main pattern"
+    example_drill: "Prove R = {(L1, L2) : L1 is parallel to L2} on the set of all lines in a plane is an equivalence relation."
+    step_outline:
+      - "Check Reflexive: Is L1 ∥ L1? Yes (by convention)."
+      - "Check Symmetric: If L1 ∥ L2, is L2 ∥ L1? Yes."
+      - "Check Transitive: If L1 ∥ L2 and L2 ∥ L3, is L1 ∥ L3? Yes."
+      - "Conclusion: Since R, S, and T all hold, it is an equivalence relation."
+    key_formulae: "Equivalence Relation = Reflexive + Symmetric + Transitive."
+    common_traps: "Forgetting the 'coincident lines are parallel' convention for reflexivity."
+    quick_check: "What about R = {(L1, L2) : L1 ⊥ L2}? (Not reflexive, not transitive, but is symmetric)."
+    difficulty: Medium
+    time_target: 2 min
+    prerequisites: "K-015, K-016, K-017"
+    variations: "R = {(A, B) : n(A) = n(B)} on P(X)."
+  - id: K-019
+    name: Finding Equivalence Classes
+    subtopic: Relations
+    concept_focus: "Understanding that an equivalence relation partitions a set."
+    pattern: "Textbook pattern"
+    example_drill: "For R = {(x, y) : x, y ∈ Z, x - y is even} (from K-017), find the equivalence classes."
+    step_outline:
+      - "Recall R is an equivalence relation."
+      - "Pick an element, e.g., 0."
+      - "Find its class: [0] = {y ∈ Z : (0, y) ∈ R} = {y : 0 - y is even} = {y : y is even}."
+      - "[0] = Set of all Even Integers."
+      - "Pick an element *not* in [0], e.g., 1."
+      - "Find its class: [1] = {y ∈ Z : (1, y) ∈ R} = {y : 1 - y is even}."
+      - "If 1-y is even, y must be odd. [1] = Set of all Odd Integers."
+      - "Check: Evens ∪ Odds = Z. The partition is {Evens, Odds}."
+    key_formulae: "[a] = {x ∈ A : (a, x) ∈ R}. The set of all equivalence classes is the partition A / R."
+    common_traps: "Not realizing that [0] = [2] = [-4] (all elements in a class generate the *same* class)."
+    quick_check: "The classes must be disjoint and their union must be the original set."
+    difficulty: Medium
+    time_target: 2 min
+    prerequisites: "K-018"
+    variations: "R = {(x, y) : x ≡ y (mod 5)}. (Classes are [0], [1], [2], [3], [4])."
+  - id: K-020
+    name: Counting Relations
+    subtopic: Relations
+    concept_focus: "Combinatorics of relations."
+    pattern: "JEE Advanced pattern"
+    example_drill: "n(A) = 3, n(B) = 2. Find the number of (i) relations from A to B, (ii) functions from A to B."
+    step_outline:
+      - "A × B has n(A) × n(B) = 3 × 2 = 6 elements."
+      - "A relation is *any subset* of A × B."
+      - [cite_start]"Number of subsets of A × B is n(P(A × B)) = 2^n(A × B)[cite: 191]."
+      - "(i) Number of relations = 2^6 = 64."
+      - "(ii) A function maps each element of A to *exactly one* element of B."
+      - "Element a1 has 2 choices. Element a2 has 2 choices. Element a3 has 2 choices."
+      - "Total functions = 2 × 2 × 2 = 2^3 = 8."
+    key_formulae: "n(Relations A → B) = 2^(n(A)n(B)). n(Functions A → B) = n(B)^n(A)."
+    common_traps: "Mixing up n(A)^n(B) with n(B)^n(A). (Remember: Codomain^Domain)."
+    quick_check: "If n(A)=1, n(B)=2, relations = 2^(1×2) = 4. Functions = 2^1 = 2. (Correct)."
+    difficulty: Medium
+    time_target: 1.5 min
+    prerequisites: "K-013, Function definition."
+    variations: "Count *reflexive* relations on A (n(A)=3). (Ans: 2^(n^2-n) = 2^(9-3) = 2^6)."
+  - id: K-021
+    name: "Domain of 1/f(x)"
+    subtopic: Domain
+    concept_focus: "Denominator cannot be zero."
+    pattern: "Textbook pattern"
+    example_drill: "Find domain of y = 1 / (x^2 - 4)."
+    step_outline:
+      - "Identify the condition: f(x) ≠ 0."
+      - "Set x^2 - 4 = 0."
+      - "Solve: x = ± 2."
+      - "State the domain: R - {-2, 2}."
+    key_formulae: "f(x) ≠ 0."
+    common_traps: "Forgetting one of the solutions (e.g., just x=2)."
+    quick_check: "Plug in x=2: 1/(4-4) = 1/0 (undefined). Correct."
+    difficulty: Easy
+    time_target: 30 sec
+    prerequisites: "Solving equations."
+    [cite_start]variations: "y = 1 / (|x| - 3)[cite: 1558]."
+  - id: K-022
+    name: "Domain of √f(x)"
+    subtopic: Domain
+    concept_focus: "Radicand must be non-negative."
+    [cite_start]pattern: "Source [cite: 866]"
+    [cite_start]example_drill: "Find domain of y = √(x - 5)[cite: 858]."
+    step_outline:
+      - [cite_start]"Identify the condition: f(x) ≥ 0[cite: 866]."
+      - [cite_start]"Set x - 5 ≥ 0[cite: 860]."
+      - [cite_start]"Solve: x ≥ 5[cite: 861]."
+      - "State the domain: [5, ∞)."
+    [cite_start]key_formulae: "f(x) ≥ 0[cite: 866]."
+    common_traps: "Using f(x) > 0 (strict inequality), which is wrong. x=5 is valid."
+    quick_check: "Plug in x=5: √0=0 (valid). Plug in x=4: √-1 (invalid)."
+    difficulty: Easy
+    time_target: 30 sec
+    prerequisites: "Solving inequalities."
+    variations: "y = √(x^2 - 5x + 6)."
+  - id: K-023
+    name: "Domain of 1/√f(x)"
+    subtopic: Domain
+    concept_focus: "Combining 1/f and √f. Radicand must be strictly positive."
+    [cite_start]pattern: "Textbook pattern [cite: 1376]"
+    example_drill: "Find domain of y = 1 / √(9 - x^2)."
+    step_outline:
+      - "Identify condition: f(x) > 0."
+      - "Set 9 - x^2 > 0."
+      - "x^2 < 9."
+      - [cite_start]"Solve: -3 < x < 3[cite: 947]."
+      - "State the domain: (-3, 3)."
+    key_formulae: "f(x) > 0."
+    common_traps: "Using f(x) ≥ 0. x=3 is invalid (division by zero)."
+    quick_check: "Plug in x=3: 1/√0 (invalid). Plug in x=0: 1/3 (valid). Plug in x=4: 1/√-7 (invalid)."
+    difficulty: Easy
+    time_target: 45 sec
+    prerequisites: "K-021, K-022"
+    variations: "y = 1 / √(x - {x}). (Domain is R - Z)."
+  - id: K-024
+    name: "Domain of log_b(f(x))"
+    subtopic: Domain
+    concept_focus: "Logarithm argument must be strictly positive."
+    pattern: "Textbook pattern"
+    example_drill: "Find domain of y = ln(x - 2)."
+    step_outline:
+      - "Identify condition: f(x) > 0."
+      - "Set x - 2 > 0."
+      - "Solve: x > 2."
+      - "State the domain: (2, ∞)."
+    key_formulae: "f(x) > 0."
+    common_traps: "Using f(x) ≥ 0. ln(0) is undefined."
+    quick_check: "Plug in x=2: ln(0) (invalid). Plug in x=2.1: ln(0.1) (valid)."
+    difficulty: Easy
+    time_target: 30 sec
+    prerequisites: "Logarithm definition."
+    variations: "y = log_(x-1)(5-x). (Requires 5-x>0, x-1>0, and x-1 ≠ 1)."
+  - id: K-025
+    name: "Domain of arcsin(f(x)) or arccos(f(x))"
+    subtopic: Domain
+    concept_focus: "Argument of arcsin / arccos must be in [-1, 1]."
+    pattern: "JEE Main pattern"
+    example_drill: "Find domain of y = arcsin(2x - 5)."
+    step_outline:
+      - "Identify condition: -1 ≤ f(x) ≤ 1."
+      - "Set -1 ≤ 2x - 5 ≤ 1."
+      - "Add 5 to all parts: 4 ≤ 2x ≤ 6."
+      - "Divide by 2: 2 ≤ x ≤ 3."
+      - "State the domain: [2, 3]."
+    key_formulae: "-1 ≤ f(x) ≤ 1."
+    common_traps: "Solving f(x) ≥ -1 and f(x) ≤ 1 as separate problems and taking their *union* instead of *intersection*."
+    quick_check: "Plug in x=2: arcsin(-1) (valid). Plug in x=3: arcsin(1) (valid). Plug in x=4: arcsin(3) (invalid)."
+    difficulty: Medium
+    time_target: 1 min
+    [cite_start]prerequisites: "Solving compound inequalities[cite: 834]."
+    variations: "y = arccos((1-x^2)/(1+x^2)). (Domain is R)."
+  - id: K-026
+    name: Domain with Modulus
+    subtopic: "Domain (Modulus)"
+    concept_focus: "Using properties of |x| to find domain."
+    [cite_start]pattern: "Source [cite: 1376-1387]"
+    [cite_start]example_drill: "Find domain of y = 1 / √(x - |x|)[cite: 1377]."
+    step_outline:
+      - "Condition: x - |x| > [cite_start]0[cite: 1383]."
+      - "Case 1: x ≥ 0. |x| [cite_start]= x[cite: 1342]. [cite_start]Condition becomes x - x > 0 ⟹ 0 > 0. (False)[cite: 1380]."
+      - "Case 2: x < 0. |x| [cite_start]= -x[cite: 1342]. [cite_start]Condition becomes x - (-x) > 0 ⟹ 2x > 0 ⟹ x > 0[cite: 1380]."
+      - "Intersection: x < 0 AND x > 0. This is impossible."
+      - [cite_start]"Conclusion: Domain is ∅[cite: 1385]."
+    key_formulae: "|x| = x if x ≥ 0, |x| [cite_start]= -x if x < 0[cite: 1342]."
+    common_traps: "Solving x > |x| without cases and getting confused."
+    quick_check: "As seen in Step 2/3, x - |x| is *never* positive. [cite_start]It is either 0 or negative[cite: 1381]."
+    difficulty: Medium
+    time_target: 1.5 min
+    [cite_start]prerequisites: "K-023, Modulus definition[cite: 1342]."
+    [cite_start]variations: "Find domain of y = 1 / √(x + |x|)[cite: 1379]. [cite_start](Ans: x > 0 [cite: 1387])."
+  - id: K-027
+    name: Domain with Greatest Integer Function (GIF)
+    subtopic: "Domain (Special Functions)"
+    concept_focus: "Solving inequalities involving [x]."
+    pattern: "JEE Advanced pattern"
+    example_drill: "Find domain of y = √([x] - 3)."
+    step_outline:
+      - "Condition: [x] - 3 ≥ 0 ⟹ [x] ≥ 3."
+      - "[x] is an integer. The first integer ≥ 3 is 3."
+      - "If [x] = 3, this means 3 ≤ x < 4."
+      - "If [x] = 4, this means 4 ≤ x < 5."
+      - "The condition [x] ≥ 3 is true if and only if x ≥ 3."
+      - "Domain: [3, ∞)."
+    key_formulae: "[x] ≤ n ⟹ x < n+1. [x] ≥ n ⟹ x ≥ n (where n ∈ Z)."
+    common_traps: "Writing [x] ≥ 3 ⟹ x > 3. (Wrong, x=3 works)."
+    quick_check: "x=3: √([3]-3) = √0 (valid). x=2.9: √([2.9]-3) = √(2-3) (invalid)."
+    difficulty: Medium
+    time_target: 1 min
+    prerequisites: "K-022, GIF definition."
+    variations: "Domain of y = 1 / ([x]^2 - 5[x] + 6). (Ans: R - [2, 4))."
+  - id: K-028
+    name: Domain with Fractional Part Function (FPF)
+    subtopic: "Domain (Special Functions)"
+    concept_focus: "Using properties of {x}."
+    pattern: "JEE Advanced pattern"
+    example_drill: "Find domain of y = 1 / ({x} - 0.5)."
+    step_outline:
+      - "Condition: {x} - 0.5 ≠ 0 ⟹ {x} ≠ 0.5."
+      - "{x} = x - [x]."
+      - "{x} = 0.5 means the fractional part is 0.5."
+      - "This happens for x = ... -1.5, -0.5, 0.5, 1.5, ...."
+      - "This set can be written as n + 0.5, where n ∈ Z."
+      - "Domain: R - {n + 0.5 : n ∈ Z}."
+    key_formulae: "{x} = x - [x]. 0 ≤ {x} < 1."
+    common_traps: "Forgetting that {x} ≠ 0.5 happens infinitely many times."
+    quick_check: "Plug in x=1.5: 1/({1.5} - 0.5) = 1/(0.5 - 0.5) = 1/0 (invalid)."
+    difficulty: Medium
+    time_target: 1 min
+    prerequisites: "K-021, FPF definition."
+    variations: "Domain of y = √({x} - 0.5). (Ans: ∪_{n ∈ Z} [n+0.5, n+1))."
+  - id: K-029
+    name: Basic Range (Quadratic)
+    subtopic: Range
+    concept_focus: "Finding the range of a quadratic ax^2+bx+c."
+    [cite_start]pattern: "Textbook pattern [cite: 1066]"
+    example_drill: "Find the range of f(x) = x^2 - 6x + 14 for x ∈ R."
+    step_outline:
+      - "It's an upward-opening parabola (a=1 > 0)."
+      - "The minimum value occurs at the vertex."
+      - "Vertex x = -b/(2a) = -(-6)/(2 × 1) = 3."
+      - "Minimum value y = f(3) = 3^2 - 6(3) + 14 = 9 - 18 + 14 = 5."
+      - "The function goes to ∞ as x → ∞."
+      - "Range: [5, ∞)."
+    key_formulae: "Vertex at x = -b/(2a). Min/Max value y = -D/(4a)."
+    common_traps: "Calculating x-coordinate of vertex and reporting *that* as the min value."
+    quick_check: "f(x) = (x-3)^2 + 5. Since (x-3)^2 ≥ 0, f(x) ≥ 5."
+    difficulty: Easy
+    time_target: 1 min
+    prerequisites: "Quadratic functions."
+    [cite_start]variations: "Find range for a restricted domain, e.g., x ∈ [0, 2][cite: 1067]."
+  - id: K-030
+    name: "Range of a sin x + b cos x"
+    subtopic: Range
+    concept_focus: "Converting to R sin(x + α) form."
+    pattern: "Trigonometry pattern"
+    example_drill: "Find the range of f(x) = 3 sin x + 4 cos x."
+    step_outline:
+      - "Identify a=3, b=4."
+      - "Calculate R = √(a^2 + b^2) = √(3^2 + 4^2) = 5."
+      - "f(x) = 5 ( (3/5) sin x + (4/5) cos x ) = 5 sin(x + α) where cos α = 3/5, sin α = 4/5."
+      - "We know -1 ≤ sin(anything) ≤ 1."
+      - "Therefore, -5 ≤ 5 sin(x + α) ≤ 5."
+      - "Range: [-5, 5]."
+    key_formulae: "Range of a sin x + b cos x is [-√(a^2+b^2), √(a^2+b^2)]."
+    common_traps: "Forgetting the square root."
+    quick_check: "Use the formula directly: [-√(3^2+4^2), √(3^2+4^2)] = [-5, 5]."
+    difficulty: Easy
+    time_target: 45 sec
+    prerequisites: "Trigonometric identities."
+    variations: "Range of f(x) = (3 sin x + 4 cos x)^2 + 1. (Ans: [1, 26])."
+  - id: K-031
+    name: "Range of Rational Function y = (ax^2+...)/(bx^2+...)"
+    subtopic: Range
+    concept_focus: "Cross-multiply and use D ≥ 0 for the resulting quadratic in x."
+    [cite_start]pattern: "Source [cite: 1978-1986]"
+    [cite_start]example_drill: "Find the range of y = (x^2 + 1) / (x^2 - 2) for x ∈ R[cite: 1978]."
+    step_outline:
+      - [cite_start]"y(x^2 - 2) = x^2 + 1 ⟹ yx^2 - 2y = x^2 + 1[cite: 1980]."
+      - [cite_start]"Rearrange into a quadratic in x: x^2(y - 1) - (2y + 1) = 0[cite: 1981]."
+      - [cite_start]"x^2 = (2y + 1) / (y - 1)[cite: 1981]."
+      - [cite_start]"Since x^2 ≥ 0, we must have (2y + 1) / (y - 1) ≥ 0[cite: 1982]."
+      - "Use sign scheme (wavy curve) for y. [cite_start]Roots are y = -1/2 and y = 1[cite: 1984]."
+      - "Scheme: + + + (-1/2) - - - (1) + + +."
+      - [cite_start]"We need ≥ 0, so y ∈ (-∞, -1/2] ∪ (1, ∞)[cite: 1986]."
+      - "*Trap check:* Does y=1 (the asymptote) work? If y=1, step 2 becomes 0 * x^2 - 3 = 0 ⟹ -3=0, which is impossible. So y ≠ 1."
+      - [cite_start]"Final Range: (-∞, -1/2] ∪ (1, ∞)[cite: 1986]."
+    key_formulae: "x ∈ R ⟹ Discriminant D ≥ 0 of the quadratic in x."
+    common_traps: "Forgetting to check the case where x^2 coefficient is zero (i.e., y=1)."
+    quick_check: "As x → ∞, y → 1 (but never reaches it). As x → √2, y → ±∞. At x=0, y = -1/2. This matches the result."
+    difficulty: Medium
+    time_target: 2.5 min
+    [cite_start]prerequisites: "Solving rational inequalities[cite: 1984], Discriminant."
+    variations: "y = (x-1)/(x^2-3x+2). (Domain is restricted)."
+  - id: K-032
+    name: "Graph y = |f(x)| from y = f(x)"
+    subtopic: Graphing
+    concept_focus: "Reflecting negative y-values across the x-axis."
+    [cite_start]pattern: "Source [cite: 1338-1343]"
+    example_drill: "Draw y = |sin x| from the graph of y = sin x."
+    step_outline:
+      - "Draw y = sin x (standard wave)."
+      - "Identify parts of the graph *below* the x-axis (e.g., from π to 2π)."
+      - [cite_start]"Reflect these parts *across* the x-axis[cite: 1342]."
+      - [cite_start]"Keep the parts that were already *above* the x-axis as they are[cite: 1342]."
+      - "The result is a 'bouncing' wave."
+    key_formulae: "|f(x)| = f(x) if f(x) ≥ 0, |f(x)| [cite_start]= -f(x) if f(x) < 0[cite: 1342, 1440]."
+    common_traps: "Confusing |f(x)| with f(|x|)."
+    [cite_start]quick_check: "The final graph must be entirely on or above the x-axis[cite: 1331]."
+    difficulty: Easy
+    time_target: 45 sec
+    [cite_start]prerequisites: "Standard graphs[cite: 1343]."
+    variations: "Draw y = |x^2 - 4|."
+  - id: K-033
+    name: "Graph y = f(|x|) from y = f(x)"
+    subtopic: Graphing
+    concept_focus: "Discarding the left-half and reflecting the right-half."
+    [cite_start]pattern: "Source [cite: 1343]"
+    example_drill: "Draw y = sin(|x|) from the graph of y = sin x."
+    step_outline:
+      - "Draw y = sin x."
+      - "Discard/erase the entire graph for x < 0 (left of y-axis)."
+      - [cite_start]"Keep the graph for x ≥ 0 (right of y-axis)[cite: 1343]."
+      - "Reflect the right-side graph (from step 3) across the y-axis onto the left side."
+      - "Result is sin(x) for x ≥ 0 and sin(-x) = -sin(x) for x < 0. The graph is symmetric about the y-axis."
+    key_formulae: "f(|x|) is an even function."
+    common_traps: "Confusing with |f(x)|. Reflecting the wrong part."
+    quick_check: "The final graph must be symmetric with respect to the y-axis."
+    difficulty: Easy
+    time_target: 1 min
+    prerequisites: "Standard graphs."
+    variations: "Draw y = e^|x|."
+  - id: K-034
+    name: "Graph y = [f(x)] from y = f(x)"
+    subtopic: "Graphing (Special Functions)"
+    concept_focus: "Projecting graph segments onto the nearest integer below."
+    pattern: "JEE Advanced pattern"
+    example_drill: "Draw y = [sin x] from the graph of y = sin x."
+    step_outline:
+      - "Draw y = sin x."
+      - "Draw horizontal 'grid lines' at y=0, y=1, y=-1."
+      - "For x ∈ (0, π), 0 < sin x ≤ 1. If sin x = 1 (at x=π/2), y=1. If 0 < sin x < 1, y=0."
+      - "For x ∈ (π, 2π), -1 ≤ sin x < 0. y = -1."
+      - "At x=0, π, 2π, sin x = 0, so y = [0] = 0."
+      - "The graph is a series of step functions."
+    key_formulae: "[f(x)] = n ⟺ n ≤ f(x) < n+1."
+    common_traps: "Misplacing open/closed circles at the 'jumps'."
+    quick_check: "The range of the final graph must be a subset of Z."
+    difficulty: Medium
+    time_target: 2 min
+    prerequisites: "Standard graphs, GIF definition."
+    variations: "Draw y = [x^2] for x ∈ [0, 2]."
+  - id: K-035
+    name: "Graph y = {f(x)} from y = f(x)"
+    subtopic: "Graphing (Special Functions)"
+    concept_focus: "'Sawtooth' transformation; graph is f(x) - [f(x)]."
+    pattern: "JEE Advanced pattern"
+    example_drill: "Draw y = {x^2} for x ∈ [0, 2]."
+    step_outline:
+      - "Draw y = x^2 from x=0 to x=2. (Range is [0, 4])."
+      - "Identify where y crosses integer values: y=1 at x=1, y=2 at x=√2, y=3 at x=√3, y=4 at x=2."
+      - "From x=0 to x=1, y goes from 0 to 1. {y} is just y=x^2."
+      - "From x=1 to x=√2, y goes from 1 to 2. {y} = y - [y] = x^2 - 1. This is the x^2 graph shifted *down* by 1."
+      - "From x=√2 to x=√3, y goes from 2 to 3. {y} = x^2 - 2."
+      - "The graph 'drops' back to 0 at x=1, √2, √3, 2."
+    key_formulae: "{f(x)} = f(x) - [f(x)]. Range is [0, 1)."
+    common_traps: "Graphing {x}^2 instead."
+    quick_check: "The final graph must be contained between y=0 (inclusive) and y=1 (exclusive, except possibly at integers)."
+    difficulty: Medium
+    time_target: 2 min
+    prerequisites: "Standard graphs, FPF definition."
+    variations: "Draw y = {sin x}."
+  - id: K-036
+    name: "Graph y = sgn(f(x)) from y = f(x)"
+    subtopic: "Graphing (Special Functions)"
+    concept_focus: "Mapping the graph to y=1, -1, 0."
+    pattern: "Textbook pattern"
+    example_drill: "Draw y = sgn(x^2 - 3x + 2) from y = x^2 - 3x + 2."
+    step_outline:
+      - "Draw (or sketch) f(x) = x^2 - 3x + 2 = (x-1)(x-2). It's an upward parabola with roots at 1, 2."
+      - "Identify where f(x) > 0: x ∈ (-∞, 1) ∪ (2, ∞). For this region, sgn(f(x)) = 1."
+      - "Identify where f(x) < 0: x ∈ (1, 2). For this region, sgn(f(x)) = -1."
+      - "Identify where f(x) = 0: x = 1, 2. For these points, sgn(f(x)) = 0."
+      - "Draw the resulting 3-level step graph."
+    key_formulae: "sgn(z) = 1 if z>0, 0 if z=0, -1 if z<0."
+    common_traps: "Confusing sgn(x) with sin(x)."
+    quick_check: "The range of the final graph must be {-1, 0, 1}."
+    difficulty: Medium
+    time_target: 1.5 min
+    prerequisites: "Standard graphs, Signum definition."
+    variations: "Draw y = x * sgn(x). (This is just y = |x|)."
+  - id: K-037
+    name: "Graph y = max(f(x), g(x))"
+    subtopic: Graphing
+    concept_focus: "Taking the 'upper envelope' of two graphs."
+    pattern: "JEE Advanced pattern"
+    example_drill: "Draw y = max(x, x^2)."
+    step_outline:
+      - "Draw y = x (a line) and y = x^2 (a parabola) on the same axes."
+      - "Find intersection points: x^2 = x ⟹ x(x-1) = 0 ⟹ x=0, x=1."
+      - "For x ∈ (0, 1), the line y=x is *above* the parabola y=x^2."
+      - "For x ∈ (-∞, 0) ∪ (1, ∞), the parabola y=x^2 is *above* the line y=x."
+      - "'max' means 'take the higher y-value'."
+      - "The final graph is the parabola for x<0, the line for x ∈ (0,1), and the parabola again for x>1."
+    key_formulae: "max(a, b) = (a+b)/2 + |a-b|/2."
+    common_traps: "Taking min instead of max."
+    quick_check: "The final graph should never be *below* either of the original graphs."
+    difficulty: Medium
+    time_target: 1.5 min
+    prerequisites: "Graphing."
+    variations: "Draw y = min(sin x, cos x)."
+  - id: K-038
+    name: Check Injectivity (One-to-One) Algebraically
+    subtopic: Function Types
+    concept_focus: "Proving f(x1) = f(x2) ⟹ x1 = x2."
+    pattern: "Textbook pattern"
+    example_drill: "Is f(x) = 3x + 5 for f: R → R injective?"
+    step_outline:
+      - "Assume f(x1) = f(x2)."
+      - "3x1 + 5 = 3x2 + 5."
+      - "Subtract 5: 3x1 = 3x2."
+      - "Divide by 3: x1 = x2."
+      - "Conclusion: Yes, it is injective."
+    key_formulae: "f(x1) = f(x2) ⟹ x1 = x2."
+    common_traps: "Trying to prove x1 = x2 ⟹ f(x1) = f(x2) (this is the *definition* of a function, not injectivity)."
+    quick_check: "Find a counterexample. f(x) = x^2. f(-2) = 4, f(2) = 4. f(x1) = f(x2) but x1 ≠ x2. Not injective."
+    difficulty: Easy
+    time_target: 1 min
+    prerequisites: "Function definition."
+    variations: "Is f(x) = x / (x+1) injective?"
+  - id: K-039
+    name: Check Injectivity Graphically (Horizontal Line Test)
+    subtopic: Function Types
+    concept_focus: "Visualizing one-to-one mapping."
+    pattern: "Textbook pattern"
+    example_drill: "Is f(x) = x^3 - x injective?"
+    step_outline:
+      - "Sketch the graph of y = x^3 - x = x(x-1)(x+1)."
+      - "Roots are at -1, 0, 1. It goes from -∞, up, down, then up to +∞."
+      - "Draw a horizontal line, e.g., y = 0.1."
+      - "Observe: The line y=0.1 cuts the graph at *three* distinct points."
+      - "Conclusion: It fails the Horizontal Line Test. Not injective."
+    key_formulae: "If any horizontal line y=k intersects the graph more than once, it is not injective."
+    common_traps: "Only testing y=0."
+    quick_check: "f(x) = x^3 (monotonic) passes HLT. f(x) = x^2 (non-monotonic) fails HLT."
+    difficulty: Easy
+    time_target: 1 min
+    prerequisites: "Graphing."
+    variations: "Is f(x) = e^x injective? (Yes)."
+  - id: K-040
+    name: Check Surjectivity (Onto)
+    subtopic: Function Types
+    concept_focus: "Verifying if Range = Codomain."
+    pattern: "Textbook pattern"
+    example_drill: "Is f: R → R defined by f(x) = x^2 surjective?"
+    step_outline:
+      - "Identify Codomain: R."
+      - "Find the Range of f(x) = x^2. (From K-029, or known graph)."
+      - "Range is [0, ∞)."
+      - "Compare: Is Range = Codomain? Is [0, ∞) = R?"
+      - "Conclusion: No. For example, y = -1 (which is in the Codomain) has no corresponding x in the Domain. Not surjective."
+    key_formulae: "Range = Codomain."
+    common_traps: "Assuming Codomain is R if not specified (though it's a common convention)."
+    quick_check: "Can f(x) produce *all* y-values in the Codomain?"
+    difficulty: Medium
+    time_target: 1.5 min
+    prerequisites: "K-029 (Range)."
+    variations: "Is f: R → [0, ∞) defined by f(x) = x^2 surjective? (Yes)."
+  - id: K-041
+    name: Proving Bijectivity
+    subtopic: Function Types
+    concept_focus: "Proving *both* injectivity and surjectivity."
+    pattern: "Textbook pattern"
+    example_drill: "Is f: R → R defined by f(x) = 3x + 5 bijective?"
+    step_outline:
+      - "Injectivity: From K-038, f(x1) = f(x2) ⟹ ... ⟹ x1 = x2. (Yes)."
+      - "Surjectivity: Codomain = R. Find Range. Let y = 3x + 5. Solve for x: x = (y-5)/3."
+      - "For *any* y ∈ R (Codomain), can we find an x ∈ R (Domain)?"
+      - "Yes, x = (y-5)/3 is always a real number."
+      - "Range = R. Range = Codomain. (Yes)."
+      - "Conclusion: It is injective and surjective, so it is bijective."
+    key_formulae: "Bijective = Injective + Surjective."
+    common_traps: "Only checking one of the two conditions."
+    quick_check: "A line y=mx+c (with m ≠ 0) from R → R is always bijective."
+    difficulty: Medium
+    time_target: 2 min
+    prerequisites: "K-038, K-040"
+    variations: "f: R - {1} → R - {1} by f(x) = x / (x-1)."
+  - id: K-042
+    name: Restricting Domain/Codomain for Bijectivity
+    subtopic: Function Types
+    concept_focus: "Modifying a non-bijective function to make it bijective."
+    pattern: "JEE Advanced pattern"
+    example_drill: "f(x) = x^2 - 4x + 5. Find sets A, B such that f: A → B is bijective."
+    step_outline:
+      - "f(x) = (x-2)^2 + 1. Vertex at (2, 1)."
+      - "Graph is a parabola, not injective on R."
+      - "To make *injective*, restrict domain to one side of the vertex. e.g., A = [2, ∞)."
+      - "On this domain A, find the range. f(2)=1. As x → ∞, f(x) → ∞. Range is [1, ∞)."
+      - "To make *surjective*, set Codomain B = Range. So, B = [1, ∞)."
+      - "Conclusion: One valid pair is A = [2, ∞), B = [1, ∞)."
+    key_formulae: "Restrict Domain to make injective. Set Codomain = Range to make surjective."
+    common_traps: "Restricting domain to [0, ∞) (still not injective, vertex is at 2)."
+    quick_check: "A = (-∞, 2], B = [1, ∞) is another valid solution."
+    difficulty: Medium
+    time_target: 2 min
+    prerequisites: "K-029, K-039"
+    variations: "Restrict sin x. (e.g., A = [-π/2, π/2], B = [-1, 1])."
+  - id: K-043
+    name: "Find f(g(x))"
+    subtopic: Composition
+    concept_focus: "Algebraic substitution."
+    pattern: "Textbook pattern"
+    example_drill: "f(x) = x^2 + 1, g(x) = √(x-2). Find f(g(x))."
+    step_outline:
+      - "Write f(g(x)) = f(√(x-2))."
+      - "Replace 'x' in f(x)'s definition with '√(x-2)'."
+      - "f(g(x)) = (√(x-2))^2 + 1."
+      - "Simplify: (x-2) + 1 = x - 1."
+    key_formulae: "(f ∘ g)(x) = f(g(x))."
+    common_traps: "Calculating g(f(x)) by mistake."
+    quick_check: "f(g(6)) = f(√(6-2)) = f(2) = 2^2+1 = 5. Using formula: f(g(6)) = 6-1 = 5. Match."
+    difficulty: Easy
+    time_target: 45 sec
+    prerequisites: "Function definition."
+    variations: "Find f(f(x))."
+  - id: K-044
+    name: "Find Domain of f(g(x))"
+    subtopic: Composition
+    concept_focus: "Two-stage domain check."
+    pattern: "JEE Advanced pattern"
+    example_drill: "f(x) = 1/(x-10), g(x) = √(x-2). Find the domain of f(g(x))."
+    step_outline:
+      - "(Outer) f(z) = 1/(z-10) requires z ≠ 10."
+      - [cite_start]"(Inner) g(x) = √(x-2) requires x-2 ≥ 0 ⟹ x ≥ 2[cite: 866]."
+      - "Combine: We need x ≥ 2 (so g(x) is defined) AND g(x) ≠ 10 (so f(g(x)) is defined)."
+      - "Solve g(x) = 10 ⟹ √(x-2) = 10 ⟹ x-2 = 100 ⟹ x = 102."
+      - "Final Domain: x ≥ 2 AND x ≠ 102."
+      - "Domain: [2, 102) ∪ (102, ∞)."
+    key_formulae: "Domain(f ∘ g) = {x ∈ Domain(g) : g(x) ∈ Domain(f)}."
+    common_traps: "Only finding the domain of the final simplified expression. (e.g., f(x)=x^2, g(x)=√x. f(g(x)) = x. Domain is R? No, g(x) requires x ≥ 0)."
+    quick_check: "x=102 - g(102) = 10 - f(10) = 1/0 (invalid). x=2 - g(2)=0 - f(0) = -1/10 (valid). x=1 - g(1) (invalid)."
+    difficulty: Medium
+    time_target: 2 min
+    prerequisites: "K-021, K-022, K-043"
+    variations: "Domain of f(g(x)) where f(x) = arcsin(x), g(x) = ln(x)."
+  - id: K-045
+    name: "Find Range of f(g(x))"
+    subtopic: Composition
+    concept_focus: "Finding range of the inner function and using it as the domain for the outer function."
+    pattern: "JEE Advanced pattern (Hard)"
+    example_drill: "f(x) = x^2+1, g(x) = sin x. Find range of f(g(x))."
+    step_outline:
+      - "Find Range of *inner* function g(x) = sin x. Range is [-1, 1]."
+      - "This range becomes the *input* (domain) for the *outer* function f(x)."
+      - "Find the range of f(x) = x^2+1 *only for the domain* x ∈ [-1, 1]."
+      - "f(x) is a parabola with vertex at x=0. f(0)=1 (min)."
+      - "Check endpoints: f(1)=2, f(-1)=2 (max)."
+      - "The range on this restricted domain is [1, 2]."
+      - "Final Range: [1, 2]."
+    key_formulae: "Range(f ∘ g) = f(Range(g))."
+    common_traps: "Finding Range(f) and Range(g) and composing them (meaningless)."
+    quick_check: "f(g(x)) = sin^2 x + 1. Since 0 ≤ sin^2 x ≤ 1, 1 ≤ sin^2 x + 1 ≤ 2. Range is [1, 2]."
+    difficulty: Hard
+    time_target: 2.5 min
+    prerequisites: "K-029, K-043"
+    variations: "Range of f(g(x)) where f(x) = sin x, g(x) = x^2+1. (Ans: sin([1, ∞)) = [-1, 1])."
+  - id: K-046
+    name: "Find Inverse f⁻¹(x) Algebraically"
+    subtopic: Inverse Functions
+    concept_focus: "Swapping x and y and solving for y."
+    pattern: "Textbook pattern"
+    example_drill: "f(x) = (2x - 1) / (x + 3). Find f⁻¹(x)."
+    step_outline:
+      - "Write y = (2x - 1) / (x + 3)."
+      - "Swap x and y: x = (2y - 1) / (y + 3)."
+      - "Solve for y: x(y + 3) = 2y - 1 ⟹ xy + 3x = 2y - 1."
+      - "Group y terms: 3x + 1 = 2y - xy ⟹ 3x + 1 = y(2 - x)."
+      - "Isolate y: y = (3x + 1) / (2 - x)."
+      - "f⁻¹(x) = (3x + 1) / (2 - x)."
+    key_formulae: "y = f(x) ⟺ x = f⁻¹(y)."
+    common_traps: "Algebraic errors in solving for y."
+    quick_check: "f(1) = 1/4. f⁻¹(1/4) = (3(1/4)+1) / (2 - 1/4) = (7/4) / (7/4) = 1. (Correct)."
+    difficulty: Easy
+    time_target: 1.5 min
+    prerequisites: "K-041 (must be bijective)."
+    variations: "f(x) = ln(x + √(x^2+1))."
+  - id: K-047
+    name: "Graph f⁻¹(x) from f(x)"
+    subtopic: Inverse Functions
+    concept_focus: "Inverse graph is a reflection across y=x."
+    pattern: "Textbook pattern"
+    example_drill: "Draw the graph of f⁻¹(x) given the graph of f(x) = e^x."
+    step_outline:
+      - "Draw f(x) = e^x. (Passes through (0, 1), x-axis is asymptote)."
+      - "Draw the line y = x."
+      - "Reflect the graph of e^x across y=x."
+      - "The point (0, 1) becomes (1, 0)."
+      - "The x-axis asymptote (y=0) becomes a y-axis asymptote (x=0)."
+      - "The resulting graph is y = ln x."
+    key_formulae: "(a, b) on f(x) ⟹ (b, a) on f⁻¹(x)."
+    common_traps: "Reflecting across y-axis or x-axis."
+    quick_check: "The two graphs should be symmetric about y=x."
+    difficulty: Easy
+    time_target: 1 min
+    prerequisites: "Graphing."
+    variations: "Graph y = arcsin x from y = sin x."
+  - id: K-048
+    name: "Conceptual Inverse f⁻¹(a)"
+    subtopic: Inverse Functions
+    concept_focus: "f⁻¹(a) = b ⟺ f(b) = a."
+    pattern: "JEE Main pattern"
+    example_drill: "f(x) = x^3 + x + 1. Find f⁻¹(11)."
+    step_outline:
+      - "We want b such that f(b) = 11."
+      - "Set b^3 + b + 1 = 11 ⟹ b^3 + b - 10 = 0."
+      - "By inspection (try small integers): b=1 - 1+1-10 ≠ 0. b=2 - 8+2-10 = 0."
+      - "We found b=2."
+      - "Since f(2) = 11, f⁻¹(11) = 2."
+    key_formulae: "f(x)=y ⟺ f⁻¹(y)=x."
+    common_traps: "Trying to find the algebraic inverse of x^3+x+1, which is very difficult/impossible."
+    quick_check: "f(2) = 2^3 + 2 + 1 = 8 + 2 + 1 = 11. Correct."
+    difficulty: Medium
+    time_target: 1 min
+    prerequisites: "K-046"
+    variations: "Given g(x) = f(x) + x^2, find (g ∘ f⁻¹)(11)."
+  - id: K-049
+    name: Check Even/Odd Algebraically
+    subtopic: Function Properties
+    concept_focus: "Testing f(-x)."
+    pattern: "Textbook pattern"
+    example_drill: "Is f(x) = (e^x - e^(-x)) / x^2 even, odd, or neither?"
+    step_outline:
+      - "Find f(-x): f(-x) = (e^(-x) - e^(-(-x))) / ((-x)^2) = (e^(-x) - e^x) / x^2."
+      - "Compare to f(x): f(-x) = -((e^x - e^(-x))) / x^2 = -f(x)."
+      - "Conclusion: f(x) is odd."
+    key_formulae: "Even: f(-x) = f(x). Odd: f(-x) = -f(x)."
+    common_traps: "f(x) = x+1. f(-x) = -x+1. Not f(x) and not -f(x). It's 'neither'."
+    quick_check: "Even × Odd = Odd. (Here, numerator is Odd, denominator x^2 is Even. Odd/Even = Odd)."
+    difficulty: Easy
+    time_target: 1 min
+    prerequisites: "Function definition."
+    variations: "f(x) = ln(x + √(x^2+1)). (This is odd)."
+  - id: K-050
+    name: Check Even/Odd Graphically
+    subtopic: Function Properties
+    concept_focus: "Symmetry (y-axis or origin)."
+    pattern: "Textbook pattern"
+    example_drill: "Is f(x) = cos x even/odd? Is f(x) = x^3 even/odd?"
+    step_outline:
+      - "Graph y = cos x. Observe it is symmetric with respect to the y-axis. Conclusion: Even."
+      - "Graph y = x^3. Observe it is symmetric with respect to the origin (180-degree rotation). Conclusion: Odd."
+    key_formulae: "Even ⟺ y-axis symmetry. Odd ⟺ origin symmetry."
+    common_traps: "Confusing the two symmetries."
+    quick_check: "cos(-x) = cos x (Even). (-x)^3 = -x^3 (Odd)."
+    difficulty: Easy
+    time_target: 30 sec
+    prerequisites: "Graphing."
+    variations: "Is f(x) = x^2+x symmetric? (No)."
+  - id: K-051
+    name: "Decompose f(x) into Even + Odd parts"
+    subtopic: Function Properties
+    concept_focus: "Using the standard decomposition formula."
+    pattern: "Textbook pattern"
+    example_drill: "Express f(x) = e^x as the sum of an even and an odd function."
+    step_outline:
+      - "Recall Even part fe(x) = (f(x) + f(-x)) / 2."
+      - "Recall Odd part fo(x) = (f(x) - f(-x)) / 2."
+      - "Find f(-x) = e^(-x)."
+      - "fe(x) = (e^x + e^(-x)) / 2 = cosh(x)."
+      - "fo(x) = (e^x - e^(-x)) / 2 = sinh(x)."
+      - "f(x) = cosh(x) + sinh(x)."
+    key_formulae: "f(x) = [(f(x) + f(-x))/2] + [(f(x) - f(-x))/2]."
+    common_traps: "Dividing by f(-x) or other errors."
+    quick_check: "fe(x) + fo(x) = (e^x + e^(-x) + e^x - e^(-x)) / 2 = (2e^x) / 2 = e^x. Correct."
+    difficulty: Medium
+    time_target: 1.5 min
+    prerequisites: "K-049"
+    variations: "Decompose f(x) = 1 / (x-1)."
+  - id: K-052
+    name: "Check Periodicity (f(x+T) = f(x))"
+    subtopic: Function Properties
+    concept_focus: "Algebraic check for a fundamental period T."
+    pattern: "Textbook pattern"
+    example_drill: "Find the period of f(x) = tan x."
+    step_outline:
+      - "We know tan(x + π) = tan x."
+      - "Test T = π. f(x+π) = tan(x+π) = tan(x) = f(x)."
+      - "Is it the *smallest* such positive T? Yes, tan(x+π/2) = -cot x ≠ tan x."
+      - "Period is π."
+    key_formulae: "T is the fundamental period if f(x+T) = f(x) and T is the smallest positive value."
+    common_traps: "Stating period of tan x is 2π."
+    quick_check: "Graph of tan x repeats every π units."
+    difficulty: Easy
+    time_target: 45 sec
+    prerequisites: "Trigonometry."
+    variations: "Find period of f(x) = {x}. (Ans: T=1)."
+  - id: K-053
+    name: "Period of f(ax) or f(x/a)"
+    subtopic: Function Properties
+    concept_focus: "Scaling the period."
+    pattern: "Textbook pattern"
+    example_drill: "Period of sin x is 2π. Find period of sin(3x)."
+    step_outline:
+      - "f(x) = sin x has period T = 2π."
+      - "g(x) = f(ax) = sin(3x)."
+      - "New period T' = T / |a|."
+      - "T' = 2π / |3| = 2π/3."
+    key_formulae: "Period of f(ax) is T/|a|. Period of f(x/a) is T × |a|."
+    common_traps: "Multiplying by a instead of dividing."
+    quick_check: "sin(3x) oscillates 3 times *faster* than sin x, so its period should be 3 times *smaller*."
+    difficulty: Easy
+    time_target: 30 sec
+    prerequisites: "K-052"
+    variations: "Period of tan(x/2). (Ans: π / (1/2) = 2π)."
+  - id: K-054
+    name: Period of Combined Functions (LCM rule)
+    subtopic: Function Properties
+    concept_focus: "Finding period of f(x) + g(x)."
+    pattern: "JEE Main pattern"
+    example_drill: "Find period of f(x) = sin(2x) + cos(3x)."
+    step_outline:
+      - "g(x) = sin(2x). Period T1 = 2π/2 = π."
+      - "h(x) = cos(3x). Period T2 = 2π/3."
+      - "T = LCM(T1, T2) = LCM(π, 2π/3)."
+      - "Use formula LCM(a/b, c/d) = LCM(a, c) / HCF(b, d)."
+      - "T = LCM(π/1, 2π/3) = LCM(π, 2π) / HCF(1, 3) = 2π / 1 = 2π."
+    key_formulae: "T = LCM(T1, T2). Only works if f, g are periodic."
+    common_traps: "LCM rule can fail (e.g., |sin x| + |cos x| has period π/2, not LCM(π, π) = π). Sum is periodic *only if* ratio of periods T1/T2 is rational."
+    quick_check: "f(x+2π) = sin(2(x+2π)) + cos(3(x+2π)) = sin(2x+4π) + cos(3x+6π) = sin(2x) + cos(3x) = f(x)."
+    difficulty: Medium
+    time_target: 1.5 min
+    prerequisites: "K-053, LCM/HCF."
+    variations: "Period of |sin x| + {x}. (Not periodic, as ratio of periods π/1 is irrational)."
+  - id: K-055
+    name: "Cauchy's Eq: f(x+y) = f(x) + f(y)"
+    subtopic: Functional Equations
+    concept_focus: "Recognizing the 'linear' functional equation."
+    pattern: "JEE Advanced pattern"
+    example_drill: "f(x+y) = f(x) + f(y) for all x, y ∈ Q. f(1) = 3. Find f(5)."
+    step_outline:
+      - "Recognize Cauchy's linear equation. Solution is f(x) = kx."
+      - "Use f(1)=3 to find k. f(1) = k × 1 = 3 ⟹ k=3."
+      - "So, f(x) = 3x."
+      - "Find f(5) = 3 × 5 = 15."
+      - "*Alt. (from basics):* f(2) = f(1+1) = f(1)+f(1) = 3+3=6. f(3) = f(2+1) = f(2)+f(1) = 6+3=9. f(5) = 5 × f(1) = 15."
+    key_formulae: "f(x+y) = f(x) + f(y) ⟹ f(x) = kx (if continuous or holds on Q)."
+    common_traps: "Assuming f(x)=kx if domain is R *without* continuity or monotonicity."
+    difficulty: Medium
+    time_target: 1 min
+    prerequisites: "Function definition."
+    variations: "f(x+y) = f(x) + f(y) and f(xy) = f(x)f(y). (Ans: f(x)=0 or f(x)=x)."
+  - id: K-056
+    name: "Exponential Eq: f(x+y) = f(x)f(y)"
+    subtopic: Functional Equations
+    concept_focus: "Recognizing the 'exponential' functional equation."
+    pattern: "JEE Advanced pattern"
+    example_drill: "f(x+y) = f(x)f(y) for all x, y. f(1) = 2. Find f(3)."
+    step_outline:
+      - "Recognize exponential equation. Solution is f(x) = a^x."
+      - "Use f(1)=2: f(1) = a^1 = 2 ⟹ a=2."
+      - "So, f(x) = 2^x."
+      - "Find f(3) = 2^3 = 8."
+      - "*Alt. (from basics):* f(2) = f(1+1) = f(1)f(1) = 2 × 2 = 4. f(3) = f(2+1) = f(2)f(1) = 4 × 2 = 8."
+    key_formulae: "f(x+y) = f(x)f(y) ⟹ f(x) = a^x."
+    common_traps: "Confusing with K-055."
+    quick_check: "f(x) = 2^x. f(x+y) = 2^(x+y). f(x)f(y) = 2^x * 2^y = 2^(x+y). Match."
+    difficulty: Medium
+    time_target: 1 min
+    prerequisites: "Function definition."
+    variations: "f(xy) = f(x) + f(y) ⟹ f(x) = k ln x."
+  - id: K-057
+    name: "Substitution Method (e.g., x → 1/x)"
+    subtopic: Functional Equations
+    concept_focus: "Creating a system of equations by substituting variables."
+    pattern: "JEE Advanced pattern"
+    example_drill: "2f(x) + f(1/x) = 3x. Find f(x)."
+    step_outline:
+      - "We have Eq 1: 2f(x) + f(1/x) = 3x."
+      - "Substitute x → 1/x everywhere in Eq 1."
+      - "Eq 2: 2f(1/x) + f(x) = 3(1/x)."
+      - "We have a system of linear equations in f(x) and f(1/x)."
+      - "Multiply Eq 1 by 2: 4f(x) + 2f(1/x) = 6x."
+      - "Subtract Eq 2: (4f(x) + 2f(1/x)) - (2f(1/x) + f(x)) = 6x - 3/x."
+      - "3f(x) = 6x - 3/x ⟹ f(x) = 2x - 1/x."
+    key_formulae: "Look for symmetric substitutions: x → 1/x, x → -x, x → 1-x."
+    common_traps: "Algebraic error in solving the system."
+    quick_check: "Plug f(x) = 2x - 1/x back into the original. 2(2x - 1/x) + (2(1/x) - 1/(1/x)) = 4x - 2/x + 2/x - x = 3x. Correct."
+    difficulty: Medium
+    time_target: 2 min
+    prerequisites: "Solving systems of equations."
+    variations: "af(x) + bf(-x) = g(x) (substitute x → -x)."
+  - id: K-058
+    name: "Domain of log(√{x})"
+    subtopic: "Domain (Integration)"
+    concept_focus: "Layered domain logic with special functions."
+    pattern: "JEE Advanced pattern"
+    example_drill: "Find domain of f(x) = log(√{x})."
+    step_outline:
+      - "(Outermost) log(z) requires z > 0. So √{x} > 0."
+      - "(Middle) √w requires w ≥ 0. So {x} ≥ 0. (This is always true by definition)."
+      - "(Innermost) {x} is defined for all x ∈ R."
+      - "Combine conditions: We need √{x} > 0. Squaring gives {x} > 0."
+      - "When is {x} = 0? By definition, {x} = 0 when x is an integer (x ∈ Z)."
+      - "So, we need x to *not* be an integer."
+      - "Domain: R - Z."
+    key_formulae: "log(f(x)) ⟹ f(x) > 0. √g(x) ⟹ g(x) ≥ 0. {x} = 0 ⟺ x ∈ Z."
+    common_traps: "Stopping at {x} ≥ 0 and concluding domain is R."
+    quick_check: "x=3 → log(√{3}) = log(0) (invalid). x=3.5 → log(√0.5) (valid)."
+    difficulty: Hard
+    time_target: 2 min
+    prerequisites: "K-022, K-024, K-028"
+    variations: "Domain of √log({x}). (Ans: ∅, since log({x}) is ≤ 0)."
+  - id: K-059
+    name: "Solving |f(x)| = g(x) graphically"
+    subtopic: "Meta-Skills (Graphing)"
+    concept_focus: "Finding intersections of two graphs."
+    pattern: "JEE Advanced pattern"
+    example_drill: "Find the number of solutions to |x-2| = e^x."
+    step_outline:
+      - "We need to find intersections of y = |x-2| and y = e^x."
+      - "Draw y = |x-2| (V-shape with vertex at (2, 0)[cite_start])[cite: 1447]."
+      - "Draw y = e^x on the same axes. (Passes through (0, 1), grows exponentially)."
+      - "For x > 2, y = x-2. e^x grows *much* faster than x-2. They will not intersect."
+      - "For x < 2, y = -(x-2) = 2-x (a line with negative slope)."
+      - "y = e^x is increasing, y = 2-x is decreasing. They must cross *exactly once* for x < 2."
+      - "Conclusion: 1 solution."
+    key_formulae: "Solutions to f(x)=g(x) are x-coordinates of intersection points."
+    common_traps: "Poor sketches leading to wrong intersection counts."
+    quick_check: "At x=0, |x-2|=2 and e^x=1. At x=1, |x-2|=1 and e^x ≈ 2.71. The graphs have crossed."
+    difficulty: Medium
+    time_target: 1.5 min
+    prerequisites: "K-032, Standard graphs."
+    variations: "Find number of solutions to |x^2-1| = k for different k."
+  - id: K-060
+    name: "Number of solutions for f(x) = k using graph"
+    subtopic: "Meta-Skills (Graphing)"
+    concept_focus: "Using graph analysis (Horizontal Line Test) to find solution counts."
+    [cite_start]pattern: "JEE Advanced (parameter play) [cite: 1467]"
+    example_drill: "f(x) = x^3 - 3x. Find the number of solutions to f(x) = k for k=0, 1, 3."
+    step_outline:
+      - "Analyze f(x): f'(x) = 3x^2 - 3 = 3(x-1)(x+1)."
+      - "Local Max at x=-1, f(-1) = -1 + 3 = 2."
+      - "Local Min at x=1, f(1) = 1 - 3 = -2."
+      - "Sketch the 'S' shape: Rises to (-1, 2), falls to (1, -2), rises again."
+      - "k=0 (line y=0): Crosses 3 times (roots are 0, √3, -√3)."
+      - "k=1 (line y=1): Crosses 3 times (since 1 is between -2 and 2)."
+      - "k=3 (line y=3): Crosses 1 time (since 3 is above the local max)."
+    key_formulae: "f(x)=k solutions ≡ Intersections of y=f(x) and y=k."
+    common_traps: "Miscalculating local max/min values."
+    difficulty: Medium
+    time_target: 2.5 min
+    prerequisites: "Graphing, Basic Calculus."
+    variations: "Find the set of values of k for which f(x)=k has 3 distinct solutions. (Ans: k ∈ (-2, 2))."
+  - id: K-061
+    name: Relation R defined by a function
+    subtopic: "Integration (Relations + Functions)"
+    concept_focus: "A function is a special type of relation."
+    pattern: "Textbook pattern"
+    example_drill: "A = {-1, 0, 1}, f(x) = x^2. R is a relation on A defined by xRy ⟺ y = f(x). Is R a function? Is R reflexive?"
+    step_outline:
+      - "List the relation R: x=-1 → y=(-1)^2=1. Pair: (-1, 1)."
+      - "x=0 → y=0^2=0. Pair: (0, 0)."
+      - "x=1 → y=1^2=1. Pair: (1, 1)."
+      - "R = {(-1, 1), (0, 0), (1, 1)}."
+      - "Is R a function? Yes, every x ∈ A has exactly one y."
+      - "Is R reflexive? [cite_start]Need (a,a) ∈ R for all a ∈ A[cite: 162]."
+      - "We have (0,0) and (1,1). But we *don't* have (-1, -1)."
+      - "Conclusion: R is a function, but not reflexive."
+    key_formulae: "R is a function if (x, y1) ∈ R and (x, y2) ∈ R ⟹ y1 = y2."
+    common_traps: "Confusing the properties of R as a relation with its properties as a function."
+    difficulty: Medium
+    time_target: 2 min
+    prerequisites: "K-015, K-018"
+    variations: "xRy ⟺ f(x) = f(y). (This *is* an equivalence relation, K-018)."
+  - id: K-062
+    name: "f: A → B where A, B are sets defined by inequalities"
+    subtopic: "Integration (Sets + Functions)"
+    concept_focus: "Checking surjectivity when Domain/Codomain are intervals."
+    [cite_start]pattern: "Source (sets as intervals) [cite: 524-529]"
+    [cite_start]example_drill: "A = (-3, 2], B = (-1, 5][cite: 572]. Is f: A → B by f(x) = x+2 surjective?"
+    step_outline:
+      - "Identify Codomain: B = (-1, 5]."
+      - "Identify Domain: A = (-3, 2]."
+      - "Find the Range of f(x) = x+2 *on the domain A*."
+      - "f(x) is an increasing line. The range is (f(-3), f(2)]."
+      - "f(-3) = -3 + 2 = -1."
+      - "f(2) = 2 + 2 = 4."
+      - "Range is (-1, 4]."
+      - "Compare Range to Codomain: Is (-1, 4] = (-1, 5]? No."
+      - "Conclusion: Not surjective (e.g., y=5 is in B but no x in A maps to it)."
+    key_formulae: "Surjective ⟺ Range = Codomain."
+    common_traps: "Finding range on R instead of on A."
+    quick_check: "The range (-1, 4] is a proper subset of the codomain (-1, 5]."
+    difficulty: Medium
+    time_target: 1.5 min
+    [cite_start]prerequisites: "K-040, Interval notation[cite: 529]."
+    variations: "Find k such that f(x)=x+k is surjective."
+  - id: K-063
+    name: Period of GIF/FPF Functions
+    subtopic: Function Properties
+    concept_focus: "Periodicity of {x}, [x]."
+    pattern: "Textbook pattern"
+    example_drill: "Find period of f(x) = {3x} + sin(πx)."
+    step_outline:
+      - "g(x) = {3x}. Period of {x} is 1. Period T1 = 1/|3| = 1/3."
+      - "h(x) = sin(πx). Period of sin x is 2π. Period T2 = 2π/|π| = 2."
+      - "Find T = LCM(T1, T2) = LCM(1/3, 2/1)."
+      - "T = LCM(1, 2) / HCF(3, 1) = 2 / 1 = 2."
+    key_formulae: "T = LCM(T1, T2)."
+    common_traps: "Is [x] periodic? No. [x+1] = [x]+1 ≠ [x]."
+    quick_check: "f(x+2) = {3(x+2)} + sin(π(x+2)) = {3x+6} + sin(πx + 2π) = {3x} + sin(πx) = f(x)."
+    difficulty: Medium
+    time_target: 1.5 min
+    prerequisites: "K-054"
+    variations: "Period of f(x) = [x] + [-x]. (This is periodic! T=1. It's 0 for x ∈ Z and -1 for x ∉ Z)."
+  - id: K-064
+    name: "Solving Modulus Inequalities |f(x)| < a"
+    subtopic: "Inequalities (Modulus)"
+    concept_focus: "|z| [cite_start]< a ⟺ -a < z < a[cite: 1619]."
+    [cite_start]pattern: "Source [cite: 1679-1709]"
+    example_drill: "Solve |3x - 2| [cite_start]< 4[cite: 1679]."
+    step_outline:
+      - [cite_start]"Rewrite: -4 < 3x - 2 < 4[cite: 1705]."
+      - [cite_start]"Add 2 to all parts: -2 < 3x < 6[cite: 1707]."
+      - [cite_start]"Divide by 3: -2/3 < x < 2[cite: 1709]."
+      - "Solution: (-2/3, 2)."
+    key_formulae: "|f(x)| [cite_start]≤ a ⟺ -a ≤ f(x) ≤ a[cite: 1626]."
+    common_traps: "Splitting into two separate, unrelated inequalities."
+    quick_check: "x=0 → |-2| < 4 (True). x=2 → |4| < 4 (False). x=-1 → |-5| < 4 (False). Matches interval."
+    difficulty: Easy
+    time_target: 1 min
+    prerequisites: "Compound inequalities."
+    variations: "||x-1|-2| [cite_start]< 5[cite: 1643]."
+  - id: K-065
+    name: "Solving Modulus Inequalities |f(x)| > a"
+    subtopic: "Inequalities (Modulus)"
+    concept_focus: "|z| > [cite_start]a ⟺ z > a or z < -a[cite: 1639]."
+    [cite_start]pattern: "Source [cite: 1683-1687]"
+    example_drill: "Solve |x - 3| [cite_start]≥ 2[cite: 1683]."
+    step_outline:
+      - [cite_start]"Rewrite as two separate inequalities: x - 3 ≥ 2 OR x - 3 ≤ -2[cite: 1686]."
+      - "Solve first: x ≥ 5."
+      - "Solve second: x ≤ 1."
+      - [cite_start]"Combine with 'OR' (Union): x ∈ (-∞, 1] ∪ [5, ∞)[cite: 1687]."
+    key_formulae: "|f(x)| [cite_start]≥ a ⟺ f(x) ≥ a or f(x) ≤ -a[cite: 1639]."
+    common_traps: "Writing -a ≤ f(x) ≤ a (that's for < a). Writing a ≤ x ≤ -a (impossible)."
+    quick_check: "x=0 → |-3| ≥ 2 (True). x=4 → |1| ≥ 2 (False). x=6 → |3| ≥ 2 (True). Matches."
+    difficulty: Easy
+    time_target: 1 min
+    prerequisites: "Compound inequalities."
+    variations: "||x|-3| > [cite_start]1[cite: 1689]."
+  - id: K-066
+    name: "Solving f(x)/g(x) > 0 (Wavy Curve Method)"
+    subtopic: "Inequalities (Sign Scheme)"
+    [cite_start]concept_focus: "Finding solution intervals from roots of numerator and denominator [cite: 1088-1099]."
+    [cite_start]pattern: "Source [cite: 1174-1182]"
+    [cite_start]example_drill: "Solve (x-1)(x-4) / ((x+2)(4x-1)) > 0[cite: 1178]."
+    step_outline:
+      - "Ensure RHS is 0. (It is)."
+      - "Ensure all x coefficients are positive. (They are)."
+      - [cite_start]"Find all roots (critical points): 1, 4, -2, 1/4[cite: 1179, 1181]."
+      - [cite_start]"Place on number line in order: -2, 1/4, 1, 4[cite: 1181]."
+      - [cite_start]"Start with `+` sign on the far right: (4, ∞)[cite: 1092]."
+      - "All roots have odd powers (power 1). [cite_start]So, alternate signs at each root[cite: 1097]."
+      - [cite_start]"Scheme: `+ (-2) - (1/4) + (1) - (4) +` [cite: 1179-1181]."
+      - [cite_start]"We want > 0 (positive)[cite: 1099]."
+      - [cite_start]"Solution: (-∞, -2) ∪ (1/4, 1) ∪ (4, ∞)[cite: 1182]."
+    [cite_start]key_formulae: "Sign alternates for odd powers, stays same for even powers[cite: 1095, 1097]."
+    [cite_start]common_traps: "Cross-multiplying the denominator (you can't, it might be negative)[cite: 1164]."
+    quick_check: "x=0 → ((-1)(-4)) / ((2)(-1)) = 4/-2 = -2 < 0. (Correct, 0 is in a '-' region)."
+    difficulty: Medium
+    time_target: 2 min
+    prerequisites: "Solving equations."
+    variations: "((x-1)^2(x-3)) / ((x+1)^3) ≤ 0. (Sign *doesn't* flip at x=1)."
+  - id: K-067
+    name: Triangle Inequality (Modulus)
+    subtopic: Modulus Properties
+    concept_focus: "Using |a+b| ≤ |a| + |b| and |a-b| ≥ ||a| - [cite_start]|b||[cite: 1797]."
+    [cite_start]pattern: "Source [cite: 1801-1807]"
+    example_drill: "Solve |x| + |x-2| [cite_start]= 2[cite: 1801]."
+    step_outline:
+      - "Re-write as a=x and b=2-x. Then a+b = 2."
+      - "The equation is |x| + |2-x| = 2. Since |2-x|=|x-2|, this is |x| + |x-2| = 2."
+      - "This matches the form |a| + |b| = |a-b| where a=x, b=2. No, that's |x| + |2| = |x-2|."
+      - "Let's use a=x, b=x-2. Then a-b = 2. The equation is |a| + |b| = |a-b|."
+      - "When does equality hold? |a| + |b| = |a-b| [cite_start]⟺ a * b ≤ 0[cite: 1788, 1796]."
+      - [cite_start]"So, x * (x-2) ≤ 0[cite: 1806]."
+      - "Solve x(x-2) ≤ 0."
+      - [cite_start]"Solution: x ∈ [0, 2][cite: 1807]."
+    key_formulae: "|a| + |b| = |a+b| [cite_start]⟺ ab ≥ 0[cite: 1791]. |a| + |b| = |a-b| [cite_start]⟺ ab ≤ 0[cite: 1796]."
+    common_traps: "Solving with 3 cases (x<0, 0 ≤ x ≤ 2, x>2). [cite_start]It works, but is 3x longer [cite: 2011-2014]."
+    quick_check: "x=1 → |1| + |-1| = 2 (True). x=3 → |3| + |1| = 4 ≠ 2 (False)."
+    difficulty: Medium
+    time_target: 1 min
+    [cite_start]prerequisites: "Modulus properties [cite: 1732-1797]."
+    variations: "Solve |x-1| + |x-3| ≥ 2. (Ans: R, since min value is 2 at x ∈ [1,3])."
+  - id: K-068
+    name: "Solving √f(x) > g(x)"
+    subtopic: "Inequalities (Radical)"
+    concept_focus: "Splitting into two cases based on g(x)."
+    [cite_start]pattern: "Source [cite: 1184-1198]"
+    example_drill: "Solve √x > 1-x. [cite_start](This is √f > g, but the source has √f < g[cite: 1184]. Let's solve the source's: x > √(1-x))."
+    step_outline:
+      - [cite_start]"Source example: Solve x > √(1-x)[cite: 1184]."
+      - [cite_start]"Case 1: (Prerequisite) $f(x) \ge 0 \implies 1-x \ge 0 \implies x \le 1$[cite: 1189]."
+      - "Case 2: (Prerequisite) $g(x) \ge 0$. Here $x \ge 0$. [cite_start]If $x < 0$, we have 'neg > pos', which is impossible.[cite: 1189]."
+      - [cite_start]"Both sides are non-negative, so square: $x^2 > 1-x \implies x^2 + x - 1 > 0$[cite: 1189]."
+      - [cite_start]"Roots of $x^2+x-1=0$ are $x = (-1 ± √5) / 2$[cite: 1190]."
+      - [cite_start]"$x^2+x-1>0 \implies x \in (-∞, (-1-√5)/2) ∪ ((-1+√5)/2, ∞)$[cite: 1194, 1195]."
+      - "Intersect all conditions: (1) $x \le 1$, (2) $x \ge 0$, (3) $x \in ((-1+√5)/2, ∞)$."
+      - [cite_start]"Intersection is $( (-1+√5)/2, 1 ]$[cite: 1195]."
+    key_formulae: "√f < g ⟺ f ≥ 0, g > 0, f < g^2. √f > g ⟺ (f ≥ 0 and g < 0) OR (f ≥ 0 and g ≥ 0 and f > g^2)."
+    [cite_start]common_traps: "Squaring both sides without checking if $g(x)$ is positive [cite: 1187-1188]."
+    quick_check: "x=1 → 1 > √0 (True). x=0 → 0 > √1 (False). x=0.5 → 0.5 > √0.5 (False, 0.25 > 0.5 is false). x=0.7 → 0.7 > √0.3 (True, 0.49 > 0.3)."
+    difficulty: Hard
+    time_target: 3 min
+    prerequisites: "K-022, K-066"
+    [cite_start]variations: "Solve √x-2 ≥ -1[cite: 865]. [cite_start](Ans: x-2 ≥ 0 ⟹ x ≥ 2. √+ is *always* ≥ -1 [cite: 866])."
+  - id: K-069
+    name: Counting Injective/Surjective Functions
+    subtopic: "Integration (Combinatorics + Functions)"
+    concept_focus: "Using permutations and PIE for function counting."
+    pattern: "JEE Advanced (P&C)"
+    example_drill: "n(A) = 4, n(B) = 3. Find number of (i) Injective (ii) Surjective functions from A to B."
+    step_outline:
+      - "(i) Injective (1-to-1): Need n(A) ≤ n(B). Here 4 > 3. It's impossible for 4 distinct items to map to 3 distinct items. Number = 0."
+      - "(ii) Surjective (Onto): n(A) ≥ n(B). (It holds)."
+      - "Total functions = n(B)^n(A) = 3^4 = 81."
+      - "Subtract non-surjective (functions that miss at least one element of B)."
+      - "Use PIE: Total - (Miss b1 or Miss b2 or Miss b3) ..."
+      - "N(Onto) = Σ_{k=0 to n} (-1)^k * C(n,k) * (n-k)^m where m=n(A)=4, n=n(B)=3."
+      - "C(3,0)(3)^4 - C(3,1)(2)^4 + C(3,2)(1)^4 - C(3,3)(0)^4."
+      - "1 × 81 - 3 × 16 + 3 × 1 - 0 = 81 - 48 + 3 = 36."
+    key_formulae: "n(Injective A→B) = P(n(B), n(A)) if n(B) ≥ n(A), else 0. n(Surjective A→B) = Σ... (PIE formula)."
+    common_traps: "Confusing injective/surjective. Forgetting the PIE formula."
+    difficulty: Hard
+    time_target: 3 min
+    prerequisites: "K-020, K-040, Permutations, PIE."
+    variations: "n(A)=3, n(B)=4. Injective = P(4,3) = 24. Surjective = 0."
+  - id: K-070
+    name: "Set A - B using Intervals"
+    subtopic: "Integration (Sets + Inequalities)"
+    concept_focus: "Visualizing set operations on the number line."
+    [cite_start]pattern: "Source [cite: 572-594]"
+    [cite_start]example_drill: "A = (-3, 2] and B = (-1, 5][cite: 572]. Find A - B and B - A."
+    step_outline:
+      - [cite_start]"Draw a number line[cite: 575]."
+      - [cite_start]"Draw A: Open circle at -3, line to 2 (closed circle)[cite: 579]."
+      - [cite_start]"Draw B *below* it: Open circle at -1, line to 5 (closed circle)[cite: 578]."
+      - [cite_start]"A - B: 'Stuff in A that is NOT in B'[cite: 306]."
+      - [cite_start]"The part of A from -1 to 2 overlaps with B[cite: 584]."
+      - "The part of A from -3 to -1 does *not* overlap."
+      - "Check endpoint -1: -1 is *not* in B, so it is *not* removed from A. [Endpoint logic from 588-590]."
+      - [cite_start]"A - B = (-3, -1][cite: 588]."
+      - [cite_start]"B - A: 'Stuff in B that is NOT in A'[cite: 306]."
+      - "The part of B from -1 to 2 overlaps."
+      - "The part of B from 2 to 5 does not."
+      - "Check endpoint 2: 2 *is* in A, so it *is* removed from B. [Endpoint logic from 592-594]."
+      - [cite_start]"B - A = (2, 5][cite: 592]."
+    [cite_start]key_formulae: "A - B = A ∩ B'[cite: 342]."
+    common_traps: "Getting the endpoints wrong. Confusing open/closed brackets."
+    quick_check: "A-B, B-A, A ∩ B must be disjoint. [cite_start]A ∩ B = (-1, 2][cite: 584]. A-B = (-3, -1]. B-A = (2, 5]. They are disjoint."
+    difficulty: Medium
+    time_target: 2 min
+    [cite_start]prerequisites: "Interval notation [cite: 524-529]."
+    variations: "Find (A ∪ B)'."
+kumites:
+  - id: Kumite-01
+    name: The Divisibility Exclusion
+    problem: "Let S = {1, 2, 3, ..., 1000}. Find the number of elements in S that are not divisible by 3, 5, or 7."
+    surprise_element: "It's a 'neither/nor' problem, requiring n(U) - n(A ∪ B ∪ C)."
+    dependent_katas:
+      - K-009
+      - K-010
+      - K-012
+    expected_outcome: "Tests PIE for 3 sets in a number theory context."
+    time_target: 8 min
+    escalations: "Find elements divisible by 3 or 5, but *not* by 7. (n((A ∪ B) - C))."
+  - id: Kumite-02
+    name: The Equivalence Partition
+    problem: "Let A = {x ∈ Z : 1 ≤ x ≤ 50}. A relation R is defined on A by aRb if f(a) = f(b), where f(x) = x (mod 7) (the remainder when x is divided by 7). 1. Prove R is an equivalence relation. 2. Find the number of elements in the equivalence class [3]."
+    surprise_element: "The relation is *defined* by a function. The equivalence classes are the pre-images of the elements in the range."
+    dependent_katas:
+      - K-015
+      - K-016
+      - K-017
+      - K-018
+      - K-019
+    expected_outcome: "Connects relations, functions, and partitions (number theory)."
+    time_target: 10 min
+    escalations: "f(x) = (x^2 + 1) (mod 5)."
+  - id: Kumite-03
+    name: The Domain Gauntlet
+    problem: "Find the domain of the function f(x) = (√([x]^2 - 3[x] + 2)) / (log₄(|x| - 3))."
+    surprise_element: "Combines four separate domain constraints (radical, GIF, log, modulus) that must all be satisfied simultaneously."
+    dependent_katas:
+      - K-021
+      - K-022
+      - K-024
+      - K-026
+      - K-027
+      - K-066
+    expected_outcome: "Tests systematic, layered inequality solving and intersection of solution sets."
+    time_target: 12 min
+    escalations: "Replace log₄ with log_|x|."
+  - id: Kumite-04
+    name: The Inverse Trigonometric Functional Equation
+    problem: "A continuous function f: (-1, 1) → R satisfies f(x) + f(y) = f((x+y)/(1+xy)). If f(1/2) = α, find f(1/3) in terms of α."
+    surprise_element: "The argument is the formula for tanh(A+B), not tan(A+B). The solution is f(x) = k * arctanh(x) or f(x) = k * ln((1+x)/(1-x))."
+    dependent_katas:
+      - K-055 (variation)
+      - K-056 (variation)
+      - K-057
+    expected_outcome: "Pattern recognition of non-standard functional equations and algebraic manipulation."
+    time_target: 10 min
+    escalations: "2f(x) + f(2x/(1-x^2)) = g(x)."
+  - id: Kumite-05
+    name: The Range Labyrinth
+    problem: "Find the range of f(x) = arcsin((x^2 - 3x + 2) / (x^2 + x + 1))."
+    surprise_element: "Requires finding the range of a rational function (K-031) first, and *then* using that range as the domain for arcsin (K-045)."
+    dependent_katas:
+      - K-025
+      - K-029
+      - K-031
+      - K-045
+    expected_outcome: "Multi-stage range calculation."
+    time_target: 12 min
+    escalations: "Find range of f(x) = [cos(2π * {x}^2)]."
+  - id: Kumite-06
+    name: The Bijective Quadratic
+    problem: "Let f: [a, ∞) → [b, ∞) be defined by f(x) = x^2 - 6x + 5. If f is bijective, find the *smallest* possible value of a+b."
+    surprise_element: "It's not just finding *one* valid A, B pair, but optimizing for a condition (a+b) based on the vertex."
+    dependent_katas:
+      - K-029
+      - K-040
+      - K-041
+      - K-042
+      - K-046
+    expected_outcome: "Deep understanding of how domain/codomain restriction creates a bijection."
+    time_target: 8 min
+    escalations: "f(x) = e^(x^2-6x+5)."
+  - id: Kumite-07
+    name: The Graphical Parameter Problem
+    problem: "Find the set of all real values of k for which the equation ||x^2 - 4| - 2| = k has exactly 6 distinct real solutions."
+    surprise_element: "Requires two nested graph transformations (|f(x)| and |g(x)-2|) and then applying the Horizontal Line Test (K-060) multiple times."
+    dependent_katas:
+      - K-032
+      - K-039
+      - K-059
+      - K-060
+    expected_outcome: "Complete mastery of graphical transformations and parameter analysis."
+    time_target: 12 min
+    escalations: "... has exactly 8 solutions."
+  - id: Kumite-08
+    name: The Triangle Inequality Trap
+    problem: "Find the complete set of solutions for the inequality |x^2 - 2x| + |x^2 - 1| < |2x - 1|."
+    surprise_element: "This is |a| + |b| < |a-b|. This is *never* true, as |a-b| ≤ |a| + |-b| = |a| + [cite_start]|b|[cite: 1797]."
+    dependent_katas:
+      - K-067
+    expected_outcome: "Tests recognition of the triangle inequality property. The solution is ∅."
+    time_target: 8 min
+    escalations: "Solve |x^2 - 2x| + |x - 4| > |x^2 - 3x + 4|. [cite_start](This is |a| + |b| > |a+b|, which holds if ab < 0 [cite: 1784])."
