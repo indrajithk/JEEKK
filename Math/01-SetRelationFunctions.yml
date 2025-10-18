@@ -1479,3 +1479,25 @@ kumites:
     time_target: 1.5 min
     prerequisites: "K-003"
     variations: "Prove $A - (A \cap B) = A - B$."
+ - id: K-071
+    name: "Properties of Inequalities (Non-linear)"
+    subtopic: "Inequalities (Conceptual)"
+    concept_focus: "Testing the validity of inequality rules for squaring, reciprocals, and absolute values."
+    pattern: "Multiple-choice concept check"
+    example_drill: "Which of the following is always true? (a) If a < b, then a² < b² (b) If a < b, then 1/a > 1/b (c) If a < b, then |a| < |b|"
+    step_outline:
+      - "1. Test all options for a counterexample that disproves them."
+      - "2. Universal Counterexample: $a < 0 < b$. Let $a = -2, b = 1$."
+      - "3. Test (a): $-2 < 1$ is true. $(-2)² < 1² \implies 4 < 1$ is FALSE."
+      - "4. Test (b): $-2 < 1$ is true. $1/(-2) > 1/1 \implies -0.5 > 1$ is FALSE."
+      - "5. Test (c): $-2 < 1$ is true. $|-2| < |1| \implies 2 < 1$ is FALSE."
+      - "6. Conclude all are technically false. Identify the likely *intended* answer by checking cases."
+      - "7. Check $a, b > 0$: $2 < 3 \implies 4<9, 1/2>1/3, 2<3$. (All true)."
+      - "8. Check $a, b < 0$: $-3 < -2 \implies 9 \not< 4, -1/3 > -1/2, 3 \not< 2$. (Only (b) is true)."
+      - "9. Identify (b) as the most robust rule, as it holds for all $a,b$ with the same sign."
+    key_formulae: "If $a, b$ have same sign, $a < b \implies 1/a > 1/b$. If $0 \le a < b$, then $a² < b²$."
+    common_traps: "Forgetting to test negative numbers; forgetting to test the $a < 0 < b$ case."
+    quick_check: "Test $a=2, b=3$; $a=-3, b=-2$; and $a=-2, b=3$."
+    difficulty: Medium
+    time_target: 1.5 min
+    prerequisites: "Interval notation."
