@@ -1455,3 +1455,27 @@ kumites:
     expected_outcome: "Tests recognition of the triangle inequality property. The solution is ∅."
     time_target: 8 min
     escalations: "Solve |x^2 - 2x| + |x - 4| > |x^2 - 3x + 4|. [cite_start](This is |a| + |b| > |a+b|, which holds if ab < 0 [cite: 1784])."
+    katas:
+  - id: K-071
+    name: Proving Set Equalities
+    subtopic: Set Operations
+    concept_focus: Using element-chasing ($x \in A$) to prove set identities.
+    pattern: "Textbook pattern"
+    example_drill: "If $A \cap B = A \cup B$, then what can we conclude?"
+    step_outline:
+      - "Part 1 (Prove $A \subseteq B$): Let $x \in A$."
+      - "By definition of union, $x \in A \cup B$."
+      - "Given $A \cup B = A \cap B$, so $x \in A \cap B$."
+      - "By definition of intersection, $x \in B$. Thus, $A \subseteq B$."
+      - "Part 2 (Prove $B \subseteq A$): Let $y \in B$."
+      - "By definition of union, $y \in A \cup B$."
+      - "Given $A \cup B = A \cap B$, so $y \in A \cap B$."
+      - "By definition of intersection, $y \in A$. Thus, $B \subseteq A$."
+      - "Conclusion: Since $A \subseteq B$ and $B \subseteq A$, we must have $A = B$."
+    key_formulae: "$A = B \iff A \subseteq B \land B \subseteq A$"
+    common_traps: "Guessing the answer ($A=B$) without proving both subset inclusions. Also, $A \subseteq A \cup B$ and $A \cap B \subseteq A$."
+    quick_check: "If $A=B$, then $A \cap A = A$ and $A \cup A = A$. The condition $A = A$ is met."
+    difficulty: Medium
+    time_target: 1.5 min
+    prerequisites: "K-003"
+    variations: "Prove $A - (A \cap B) = A - B$."
